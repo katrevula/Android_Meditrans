@@ -123,5 +123,22 @@ public class Customer  extends AppCompatActivity implements SearchView.OnQueryTe
 
         }
 
+        @Override
+        public int getItemCount() {
+            return horizontalList.size();
+        }
 
+        public void filter(String text) {
+            List<Bean> filterdNames = new ArrayList<>();
+            //looping through existing elements
+            for (Bean s: horizontalList ) {
+                //if the existing elements contains the search input
+                if (s.getShopname().toLowerCase().contains(text.toLowerCase())) {
+                    //adding the element to filtered list
+                    filterdNames.add(s);
+                }
+            }
+            //calling a method of the adapter class and passing the filtered list
+            madapter.filterList(filterdNames);
+        }
 }
