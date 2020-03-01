@@ -95,6 +95,21 @@ public class Bean {
 
     }
 
+    public String getShopname() {
+        return shopname;
+    }
+
+    public void setShopname(String shopname) {
+        this.shopname = shopname;
+    }
+
+    public String getShopaddress() {
+        return shopaddress;
+    }
+
+    public void setShopaddress(String shopaddress) {
+        this.shopaddress = shopaddress;
+    }
 
 
 
