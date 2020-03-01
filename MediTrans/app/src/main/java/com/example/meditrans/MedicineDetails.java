@@ -73,7 +73,20 @@ public class MedicineDetails extends AppCompatActivity  {
             return new MyViewHolder(itemView);
         }
 
-       
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
+
+            holder.st5.setText(horizontalList.get(position).getMedname());
+            holder.st6.setText(horizontalList.get(position).getMedcost());
+            holder.st7.setText(horizontalList.get(position).getMeddesc());
+
+        }
+
+        @Override
+        public int getItemCount()
+        {
+            return horizontalList.size();
+        }
 
     }
 
