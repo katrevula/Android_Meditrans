@@ -84,6 +84,15 @@ public class Bean {
         this.userid = username;
         this.password = password;
     }
+    public String getUsername() {
+        return userid;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+
 
 
 
