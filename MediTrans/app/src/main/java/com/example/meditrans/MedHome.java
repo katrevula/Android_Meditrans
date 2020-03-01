@@ -61,5 +61,10 @@ public class MedHome extends AppCompatActivity {
         });
     }
 
-    
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_dots, menu);
+        return true;
+    }
 }
