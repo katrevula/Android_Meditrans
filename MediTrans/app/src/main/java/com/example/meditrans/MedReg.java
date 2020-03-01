@@ -17,6 +17,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 public class MedReg extends AppCompatActivity {
     EditText e1,e2,e3,e4,e5,e6,e7,e8,e9;
