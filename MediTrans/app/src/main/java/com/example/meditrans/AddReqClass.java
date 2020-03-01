@@ -13,4 +13,7 @@ public class AddReqClass {
         this.brequest = brequest;
         this.baddress = baddress;
     }
+    public AddReqClass() {
+
+    }
 }
