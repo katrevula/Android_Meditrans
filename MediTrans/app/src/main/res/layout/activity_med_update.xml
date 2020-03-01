@@ -1,6 +1,201 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <android.support.v7.widget.CardView
+        app:cardElevation="20dp"
+        android:layout_margin="12dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="10dp"
+            tools:context=".MedReg">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VIEW YOUR PROFILE"
+                android:textSize="18sp"
+                android:textColor="#29B6F6"
+                android:layout_gravity="center"/>
 
-</LinearLayout>
+
+            <EditText
+                android:id="@+id/sna"
+                android:hint="Shop Name"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_shopname"
+                android:inputType="text"
+                android:textColor="#009688"
+                android:textAlignment="center"
+                android:drawableStart="@drawable/ic_shopname"
+                android:padding="6dp"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/uib"
+                android:hint="User Id"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textAlignment="center"
+                android:drawableLeft="@drawable/ic_userid"
+                android:drawableStart="@drawable/ic_userid"
+                android:padding="6dp"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/pc"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Password"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_password"
+                android:inputType="textPassword"
+                android:drawableStart="@drawable/ic_password"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/sond"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shop Owner Name"
+                android:inputType="text"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_ownername"
+                android:drawableStart="@drawable/ic_ownername"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/mne"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Mobile Number"
+                android:inputType="number"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_mob"
+                android:drawableStart="@drawable/ic_mob"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/ef"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Email"
+                android:inputType="text"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_email"
+                android:drawableStart="@drawable/ic_email"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/sag"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Shop Address"
+                android:inputType="text"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_address"
+                android:drawableStart="@drawable/ic_address"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/lch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Location/City"
+                android:inputType="text"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableLeft="@drawable/ic_city"
+                android:drawableStart="@drawable/ic_city"/>
+            <EditText
+                android:textColor="#009688"
+                android:id="@+id/ti"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Time"
+                android:inputType="text"
+                android:drawableLeft="@drawable/ic_clock"
+                android:background="@drawable/cell_shape3"
+                android:layout_marginTop="20dp"
+                android:textAlignment="center"
+                android:padding="6dp"
+                android:drawableStart="@drawable/ic_clock" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/dd"
+                    android:layout_width="0dp"
+                    android:layout_weight="1.5"
+                    android:layout_height="wrap_content"
+                    android:hint="Door Delivery Facility"
+                    android:drawableLeft="@drawable/ic_deli"
+                    android:layout_marginTop="20dp"
+                    android:padding="6dp"
+                    android:textColor="#26A69A"
+                    android:drawableStart="@drawable/ic_deli"/>
+
+                <RadioGroup
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginTop="20dp"
+                    android:id="@+id/rgj"
+                    >
+
+                    <RadioButton
+                        android:id="@+id/rbak"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="Yes"
+                        android:textColor="#000" />
+
+                    <RadioButton
+                        android:id="@+id/rbbl"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:layout_height="wrap_content"
+                        android:text="No"
+                        android:textColor="#000" />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/bim"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="#29B6F6"
+                android:text="Back"
+                android:textColor="#fff" />
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</ScrollView>
