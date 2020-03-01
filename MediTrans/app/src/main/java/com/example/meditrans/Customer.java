@@ -66,5 +66,18 @@ public class Customer  extends AppCompatActivity implements SearchView.OnQueryTe
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void getfeedback() {
+        //request for getting data
+        data.clear();
+        Bean Bean1 = new Bean();
+        Bean1.setShopname("Walgreens");
+        Bean1.setShopaddress("Maryville");
+        Bean1.setUserid("15021");
+        data.add(Bean1);
 
+        madapter = new recyclerAdapter(data, getApplicationContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(madapter);
+        }
 }
