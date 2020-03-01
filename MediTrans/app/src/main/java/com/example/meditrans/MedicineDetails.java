@@ -87,6 +87,33 @@ public class MedicineDetails extends AppCompatActivity  {
         {
             return horizontalList.size();
         }
+        public void filter(String text) {
+            List<Bean> filterdNames = new ArrayList<>();
+            //looping through existing elements
+            for (Bean s: horizontalList ) {
+                //if the existing elements contains the search input
+                if (s.getMedname().toLowerCase().contains(text.toLowerCase())) {
+                    //adding the element to filtered list
+                    filterdNames.add(s);
+                }
+            }
+            //calling a method of the adapter class and passing the filtered list
+            aadapter.filterList(filterdNames);
+        }
+        public void filterList(List<Bean> data) {
+            this.horizontalList = data;
+            notifyDataSetChanged();
+        }
+        class MyViewHolder extends RecyclerView.ViewHolder {
+            TextView st5, st6,st7;
+            MyViewHolder(View view) {
+                super(view);
+                st5 = view.findViewById(R.id.t4);
+                st6 = view.findViewById(R.id.t5);
+                st7 = view.findViewById(R.id.t6);
+            }
+        }
+    }
 
     }
 
@@ -94,4 +121,4 @@ public class MedicineDetails extends AppCompatActivity  {
 
 
 
-}
+
