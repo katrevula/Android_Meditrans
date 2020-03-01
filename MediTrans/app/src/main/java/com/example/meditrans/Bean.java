@@ -21,4 +21,38 @@ public class Bean {
     private String medcode;
     private String medcost;
     private String meddesc;
+    public String getMedname() {
+        return medname;
+    }
+
+
+
+    public String getMedcode() {
+        return medcode;
+    }
+
+
+
+    public String getMedcost() {
+        return medcost;
+    }
+
+
+
+    public String getMeddesc() {
+        return meddesc;
+    }
+
+  
+
+    public String getUserid() {
+        return userid;
+    }
+
+
+
+
+
+
+
 }
