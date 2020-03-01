@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#26A69A">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#26A69A"
+        android:orientation="vertical"
+        tools:context=".MedAdd">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="ADD MEDICINE"
+            android:textColor="#fff"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/mename"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cell_shape"
+            android:hint="Medicine Name"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="#fff"
+            android:textColorHint="#E0E0E0" />
+
+        <EditText
+            android:id="@+id/mecode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cell_shape"
+            android:hint="Medicine Code"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="#fff"
+            android:textColorHint="#E0E0E0" />
+
+        <EditText
+            android:id="@+id/mecost"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cell_shape"
+            android:hint="Medicine Cost"
+            android:inputType="number"
+            android:padding="6dp"
+            android:textColor="#fff"
+            android:textColorHint="#E0E0E0" />
+
+        <EditText
+            android:id="@+id/meshop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cell_shape"
+            android:hint="Shop Name"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="#fff"
+            android:textColorHint="#E0E0E0" />
+
+        <EditText
+            android:id="@+id/medes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/cell_shape"
+            android:hint="Description of Medicine"
+            android:inputType="text"
+            android:padding="6dp"
+            android:textColor="#fff"
+            android:textColorHint="#E0E0E0" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="Medicine"
+                android:textColor="#fff"
+                android:textSize="17sp" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbuttonc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Available"
+                    android:textColor="#fff"/>
+
+                <RadioButton
+                    android:id="@+id/rbuttond"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Not Available"
+                    android:textColor="#fff"/>
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <Button
+            android:background="@drawable/cell_shape"
+            android:id="@+id/bj"
+            android:backgroundTint="#E0E0E0"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:text="ADD" />
+    </LinearLayout>
+</ScrollView>
