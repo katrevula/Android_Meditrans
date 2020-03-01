@@ -43,11 +43,42 @@ public class Bean {
         return meddesc;
     }
 
-  
+
 
     public String getUserid() {
         return userid;
     }
+
+
+    public void setMedname(String medname) {
+        this.medname = medname;
+    }
+
+
+
+    public void setMedcode(String medcode) {
+        this.medcode = medcode;
+    }
+
+
+
+    public void setMedcost(String medcost) {
+        this.medcost = medcost;
+    }
+
+
+
+    public void setMeddesc(String meddesc) {
+        this.meddesc = meddesc;
+    }
+
+
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+
 
 
 
