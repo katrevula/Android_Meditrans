@@ -16,4 +16,26 @@ public class AddReqClass {
     public AddReqClass() {
 
     }
+    public String getBaddress() {
+        return baddress;
+    }
+
+
+    public String getBname() {
+        return bname;
+    }
+
+
+
+    public String getBmobile() {
+        return bmobile;
+    }
+
+
+
+    public String getBrequest() {
+        return brequest;
+    }
+
+    
 }
