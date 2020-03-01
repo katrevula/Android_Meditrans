@@ -1,6 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    tools:context=".AddRequestActivity">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Post Your Request"
+        android:textColor="#000"
+        android:layout_marginBottom="20dp"/>
+    <EditText
+        android:id="@+id/names"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Your Name"
+        android:textColor="#000"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"/>
+    <EditText
+        android:textColor="#000"
+        android:id="@+id/phones"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contact Number"
+        android:inputType="number"
+        android:layout_marginBottom="15dp"/>
+    <EditText
+        android:textColor="#000"
+        android:id="@+id/address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Delivery Address"
+        android:inputType="text"
+        android:layout_marginBottom="15dp"/>
+    <EditText
+        android:textColor="#000"
+        android:id="@+id/prescript"
+        android:inputType="text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Prescription / Request for Medicine"/>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="To"
+            android:textSize="18sp"
+            android:textColor="#000"/>
+        <TextView
+            android:id="@+id/shopsname"
+            android:layout_marginLeft="10dp"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ShopName"/>
+    </LinearLayout>
+    <Button
+        android:layout_width="250dp"
+        android:layout_margin="20dp"
+        android:text="Submit"
+        android:layout_height="wrap_content"
+        android:id="@+id/addreques"
+        android:background="@drawable/cell_shape"
+        android:textColor="#fff"
+        android:backgroundTint="#3F51B5"
+        android:layout_gravity="center_horizontal"/>
+
+
 
 </LinearLayout>
