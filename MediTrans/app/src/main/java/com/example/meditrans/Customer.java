@@ -1,12 +1,16 @@
 package com.example.meditrans;
 
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
 
@@ -23,49 +27,51 @@ public class Customer  extends AppCompatActivity implements SearchView.OnQueryTe
     List<Bean> data = new ArrayList<>();
     SearchView editsearch;
     SharedPreferences sharedPreferences;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
-        progressBar=findViewById(R.id.progress);
-        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
+        progressBar = findViewById(R.id.progress);
+        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         editsearch = (SearchView) findViewById(R.id.search);
         editsearch.setOnQueryTextListener(this);
         recyclerView = findViewById(R.id.recycler);
         getfeedback();
 
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_dots, menu);
         return true;
     }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
             case R.id.shome:
-                Intent i =new Intent(getApplicationContext(),MediTrans.class);
+                Intent i = new Intent(getApplicationContext(), MediTrans.class);
                 startActivity(i);
                 return true;
             case R.id.about:
-                i =new Intent(getApplicationContext(),AboutActivity.class);
+                i = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.contact:
-                i =new Intent(getApplicationContext(),ContactActivity.class);
+                i = new Intent(getApplicationContext(), ContactActivity.class);
                 startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
+
     public void getfeedback() {
         //request for getting data
         data.clear();
@@ -79,5 +85,43 @@ public class Customer  extends AppCompatActivity implements SearchView.OnQueryTe
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(madapter);
+    }
+
+    public class recyclerAdapter extends RecyclerView.Adapter<Customer.recyclerAdapter.MyViewHolder> {
+        List<Bean> horizontalList;
+        Context context;
+
+        recyclerAdapter(List<Bean> horizontalList, Context context) {
+            this.horizontalList = horizontalList;
+            this.context = context;
         }
+
+
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.card, parent, false);
+            return new MyViewHolder(itemView);
+        }
+
+        @Override
+        public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+
+            holder.st1.setText(horizontalList.get(position).getShopname());
+            holder.st2.setText(horizontalList.get(position).getShopaddress());
+            holder.cv.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    String shops = horizontalList.get(position).getUserid();
+                    SharedPreferences.Editor editor = sharedPreferences.edit();
+                    editor.putString("SHOP", shops);
+                    editor.commit();
+                    Intent intent = new Intent(getApplicationContext(), MedicineDetails.class);
+                    startActivity(intent);
+                }
+            });
+
+        }
+
+
 }
