@@ -13,6 +13,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ProgressBar;
 import android.widget.SearchView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -141,4 +142,23 @@ public class Customer  extends AppCompatActivity implements SearchView.OnQueryTe
             //calling a method of the adapter class and passing the filtered list
             madapter.filterList(filterdNames);
         }
+        public void filterList(List<Bean> data) {
+            this.horizontalList = data;
+            notifyDataSetChanged();
+        }
+
+        class MyViewHolder extends RecyclerView.ViewHolder {
+
+            TextView st1, st2;
+            CardView cv;
+
+            MyViewHolder(View view) {
+                super(view);
+                st1 = view.findViewById(R.id.t1);
+                st2 = view.findViewById(R.id.t2);
+                cv=view.findViewById(R.id.card);
+
+            }
+        }
+    }
 }
