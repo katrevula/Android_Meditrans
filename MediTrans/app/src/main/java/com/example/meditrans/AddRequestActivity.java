@@ -37,12 +37,16 @@ public class AddRequestActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Toast.makeText(getApplicationContext(),"Submitted your request",Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "Submitted your request", Toast.LENGTH_SHORT).show();
 
             }
         });
+    }
         @Override
         public boolean onCreateOptionsMenu(Menu menu) {
+            MenuInflater inflater = getMenuInflater();
+            inflater.inflate(R.menu.menu_dots, menu);
+            return true;
 
     }
     }
