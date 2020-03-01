@@ -2,6 +2,7 @@ package com.example.meditrans;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -96,5 +97,10 @@ public class MedReg extends AppCompatActivity {
             supload();
         }
     }
+    private void supload() {
+        try {
+        } catch (Exception e) {
+            Log.e("ERROR", " Enter valid details");
+        }
     }
 }
