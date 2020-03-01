@@ -2,9 +2,11 @@ package com.example.meditrans;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -29,5 +31,14 @@ public class AddRequestActivity extends AppCompatActivity {
         tsubmit = findViewById(R.id.addreques);
 
         shop.setText(shopnam);
+        tsubmit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Toast.makeText(getApplicationContext(),"Submitted your request",Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
     }
 }
