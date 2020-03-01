@@ -78,6 +78,12 @@ public class Bean {
         this.userid = userid;
     }
 
+    public Bean(String shopname, String shopaddress, String username, String password) {
+        this.shopname = shopname;
+        this.shopaddress = shopaddress;
+        this.userid = username;
+        this.password = password;
+    }
 
 
 
