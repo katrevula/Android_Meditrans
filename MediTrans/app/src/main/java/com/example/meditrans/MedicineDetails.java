@@ -114,11 +114,40 @@ public class MedicineDetails extends AppCompatActivity  {
             }
         }
     }
-
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_dots, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        // Handle item selection
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            case R.id.shome:
+                Intent i =new Intent(getApplicationContext(),MediTrans.class);
+                startActivity(i);
+                return true;
+            case R.id.about:
+                i =new Intent(getApplicationContext(),AboutActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.contact:
+                i =new Intent(getApplicationContext(),ContactActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
 
 
 
 
-
+}
