@@ -91,7 +91,9 @@ public class Bean {
     public String getPassword() {
         return password;
     }
+    public Bean() {
 
+    }
 
 
 
