@@ -89,5 +89,12 @@ public class MedReg extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    private void submitform()
+    {
+        if(awesomeValidation.validate())
+        {
+            supload();
+        }
+    }
     }
 }
