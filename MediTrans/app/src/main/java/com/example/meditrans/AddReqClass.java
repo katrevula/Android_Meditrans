@@ -33,9 +33,29 @@ public class AddReqClass {
 
 
 
+
+    public void setBaddress(String baddress) {
+        this.baddress = baddress;
+    }
+
+    public void setBname(String bname) {
+        this.bname = bname;
+    }
+
+
+
+    public void setBmobile(String bmobile) {
+        this.bmobile = bmobile;
+    }
+
+
     public String getBrequest() {
         return brequest;
     }
 
-    
+    public void setBrequest(String brequest) {
+        this.brequest = brequest;
+    }
+
+
 }
