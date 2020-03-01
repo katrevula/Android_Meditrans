@@ -1,7 +1,14 @@
 package com.example.meditrans;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -55,5 +62,62 @@ public class MedReg extends AppCompatActivity {
 
             }
         });
+    }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_dots, menu);
+        return true;
+    }
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item)
+    {
+        switch (item.getItemId())
+        {
+            case android.R.id.home:
+                onBackPressed();
+                return true;
+            case R.id.shome:
+                Intent i =new Intent(getApplicationContext(),MediTrans.class);
+                startActivity(i);
+                return true;
+            case R.id.about:
+                i =new Intent(getApplicationContext(),AboutActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.contact:
+                i =new Intent(getApplicationContext(),ContactActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
+    private void submitform()
+    {
+        if(awesomeValidation.validate())
+        {
+            supload();
+        }
+    }
+    private void supload() {
+        try {
+        } catch (Exception e) {
+            Log.e("ERROR", " Enter valid details");
+        }
+    }
+    public static boolean hasPermissions(Context context, String... permissions)
+    {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null)
+        {
+            for (String permission : permissions)
+            {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
