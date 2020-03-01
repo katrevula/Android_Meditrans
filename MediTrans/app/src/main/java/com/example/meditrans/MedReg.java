@@ -1,6 +1,9 @@
 package com.example.meditrans;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -102,5 +105,19 @@ public class MedReg extends AppCompatActivity {
         } catch (Exception e) {
             Log.e("ERROR", " Enter valid details");
         }
+    }
+    public static boolean hasPermissions(Context context, String... permissions)
+    {
+        if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M && context != null && permissions != null)
+        {
+            for (String permission : permissions)
+            {
+                if (ActivityCompat.checkSelfPermission(context, permission) != PackageManager.PERMISSION_GRANTED)
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
     }
 }
