@@ -19,6 +19,7 @@ public class AboutActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_dots, menu);
         return true;
+    }
         @Override
         public boolean onOptionsItemSelected(MenuItem item)
         {
@@ -46,5 +47,5 @@ public class AboutActivity extends AppCompatActivity {
             }
         }
         }
-    }
+    
 
