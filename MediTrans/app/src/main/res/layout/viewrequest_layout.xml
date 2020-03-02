@@ -40,7 +40,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="Tharun Kumar"
+                    android:text="Sandeep"
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
@@ -76,7 +76,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="tharungattu@gmail.com"
+                    android:text="sandeepketrevula@gmail.com"
                     android:textSize="16sp" />
             </LinearLayout>
             <LinearLayout
@@ -94,7 +94,7 @@
                     android:layout_width="0dp"
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
-                    android:text="ASTRA College"
+                    android:text="NWMSU"
                     android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
