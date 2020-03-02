@@ -12,6 +12,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+//import com.basgeekball.awesomevalidation.AwesomeValidation;
+//import com.basgeekball.awesomevalidation.ValidationStyle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -23,7 +25,7 @@ public class MedUpdate extends AppCompatActivity {
     Button b1;
     SharedPreferences sharedPreferences;
     String userids;
-    private AwesomeValidation awesomeValidation;
+   // private AwesomeValidation awesomeValidation;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,19 +58,19 @@ public class MedUpdate extends AppCompatActivity {
         b1 = findViewById(R.id.bim);
 
 
-        awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this, R.id.sn,
-                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.ui,
-                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.son,
-                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.mn,
-                "^[6-9]{1}[0-9]{9}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.lc,
-                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.e,
-                Patterns.EMAIL_ADDRESS, R.string.nameerror);
+//        awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
+//        awesomeValidation.addValidation(this, R.id.sn,
+//                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+//        awesomeValidation.addValidation(this, R.id.ui,
+//                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+//        awesomeValidation.addValidation(this, R.id.son,
+//                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+//        awesomeValidation.addValidation(this, R.id.mn,
+//                "^[6-9]{1}[0-9]{9}$", R.string.nameerror);
+//        awesomeValidation.addValidation(this, R.id.lc,
+//                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+//        awesomeValidation.addValidation(this, R.id.e,
+//                Patterns.EMAIL_ADDRESS, R.string.nameerror);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
