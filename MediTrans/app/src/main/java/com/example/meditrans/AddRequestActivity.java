@@ -13,9 +13,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-//import com.example.abhinaya.meditrans.Network.API;
-//import com.example.abhinaya.meditrans.Network.VolleySingleton;
-
 public class AddRequestActivity extends AppCompatActivity {
     EditText tname, tmobile, taddress, trquest;
     Button tsubmit;
