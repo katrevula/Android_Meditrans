@@ -9,7 +9,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".MediTrans" />
+        <activity android:name=".Medico" />
+        <activity android:name=".Customer" />
+        <activity android:name=".MedHome" />
+        <activity android:name=".MedReg" />
+        <activity android:name=".MedViewMed" />
+        <activity android:name=".MedAdd" />
+        <activity android:name=".MedViewReq" />
+        <activity android:name=".MedUpdate" />
+        <activity android:name=".MedicineDetails" />
+        <activity android:name=".AddRequestActivity" />
+        <activity android:name=".SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
