@@ -1,6 +1,8 @@
 package com.example.meditrans;
 
-import androidx.appcompat.app.AppCompatActivity;
+
+import android.support.v7.app.AppCompatActivity;
 
 public class MedViewMed extends AppCompatActivity {
+
 }

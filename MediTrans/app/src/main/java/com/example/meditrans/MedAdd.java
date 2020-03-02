@@ -1,8 +1,10 @@
 package com.example.meditrans;
 
+
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -12,9 +14,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import static android.content.Context.MODE_PRIVATE;
+//import com.example.abhinaya.meditrans.Network.API;
 
 public class MedAdd extends AppCompatActivity {
     EditText et1,et2,et3,et4,et5;

@@ -1,6 +1,8 @@
 package com.example.meditrans;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
+
+//import com.example.abhinaya.meditrans.Network.API;
 
 public class MedViewReq extends AppCompatActivity {
 }

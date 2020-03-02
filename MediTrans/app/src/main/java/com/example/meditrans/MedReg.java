@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -15,11 +17,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
-import com.basgeekball.awesomevalidation.AwesomeValidation;
-import com.basgeekball.awesomevalidation.ValidationStyle;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+
+//import com.example.abhinaya.meditrans.Network.API;
+//import com.example.abhinaya.meditrans.Network.VolleySingleton;
+//
 
 public class MedReg extends AppCompatActivity {
     EditText e1,e2,e3,e4,e5,e6,e7,e8,e9;
