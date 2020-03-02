@@ -39,6 +39,7 @@ public class AddReqClass {
     }
 
     public void setBname(String bname) {
+
         this.bname = bname;
     }
 

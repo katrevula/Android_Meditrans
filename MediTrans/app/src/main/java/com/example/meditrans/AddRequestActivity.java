@@ -16,7 +16,6 @@ import android.widget.Toast;
 public class AddRequestActivity extends AppCompatActivity {
     EditText tname, tmobile, taddress, trquest;
     Button tsubmit;
-    SharedPreferences sharedPreferences;
     String shopnam;
     TextView shop;
 
@@ -24,8 +23,6 @@ public class AddRequestActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_request);
-        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
-        shopnam = sharedPreferences.getString("SHOP", null);
         shop = findViewById(R.id.shopsname);
         tname = findViewById(R.id.names);
         tmobile = findViewById(R.id.phones);
@@ -33,7 +30,7 @@ public class AddRequestActivity extends AppCompatActivity {
         trquest = findViewById(R.id.prescript);
         tsubmit = findViewById(R.id.addreques);
 
-        shop.setText(shopnam);
+       // shop.setText(shopnam);
         tsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
