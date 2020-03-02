@@ -70,20 +70,20 @@ public class Medico extends AppCompatActivity {
         switch (item.getItemId())
         {
             case android.R.id.home:
+                Intent i0 =new Intent(getApplicationContext(),MediTrans.class);
+                startActivity(i0);
+                return true;
+            case R.id.shome:
                 Intent i =new Intent(getApplicationContext(),MediTrans.class);
                 startActivity(i);
                 return true;
-            case R.id.shome:
-                i =new Intent(getApplicationContext(),MediTrans.class);
-                startActivity(i);
-                return true;
             case R.id.about:
-                i =new Intent(getApplicationContext(),AboutActivity.class);
-                startActivity(i);
+                Intent i1  =new Intent(getApplicationContext(),AboutActivity.class);
+                startActivity(i1);
                 return true;
             case R.id.contact:
-                i =new Intent(getApplicationContext(),ContactActivity.class);
-                startActivity(i);
+                Intent i2  =new Intent(getApplicationContext(),ContactActivity.class);
+                startActivity(i2);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
