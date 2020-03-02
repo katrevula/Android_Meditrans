@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".MediTrans" />
-        <activity android:name=".Medico" />
+<!--        <activity android:name=".Medico" />-->
         <activity android:name=".Customer" />
         <activity android:name=".MedHome" />
         <activity android:name=".MedReg" />
@@ -20,7 +20,7 @@
         <activity android:name=".MedUpdate" />
         <activity android:name=".MedicineDetails" />
         <activity android:name=".AddRequestActivity" />
-        <activity android:name=".SplashActivity">
+        <activity android:name=".Medico">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
