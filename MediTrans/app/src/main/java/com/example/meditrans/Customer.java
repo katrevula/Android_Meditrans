@@ -17,6 +17,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -39,7 +40,6 @@ public class Customer  extends AppCompatActivity {
         progressBar = findViewById(R.id.progress);
         sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         editsearch = (SearchView) findViewById(R.id.search);
-        editsearch.setOnQueryTextListener(this);
         recyclerView = findViewById(R.id.recycler);
         getfeedback();
 
