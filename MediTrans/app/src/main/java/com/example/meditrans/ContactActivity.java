@@ -28,6 +28,7 @@ public class ContactActivity extends AppCompatActivity {
         inflater.inflate(R.menu.menu_dots, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item)
     {
