@@ -33,6 +33,16 @@ public class AddRequestActivity extends AppCompatActivity {
         tsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String snam = tname.getText().toString();
+                String smob = tmobile.getText().toString();
+                String sadd = taddress.getText().toString();
+                String sreq = trquest.getText().toString();
+                if(snam.equals("")&&smob.equals("")&&sadd.equals("")&&sreq.equals("")){
+                    tname.setError("Enter your name here");
+                    tmobile.setError("Enter your mobile number here");
+                    taddress.setError("Enter your address here");
+                    trquest.setError("Type your Request or Prescription");
+                }
 
                 Toast.makeText(getApplicationContext(), "Submitted your request", Toast.LENGTH_SHORT).show();
 
