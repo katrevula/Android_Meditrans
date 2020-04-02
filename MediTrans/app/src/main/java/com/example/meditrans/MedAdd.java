@@ -3,6 +3,7 @@ package com.example.meditrans;
 
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
@@ -26,6 +27,11 @@ import com.android.volley.toolbox.StringRequest;
 import org.json.JSONObject;
 
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -198,4 +204,23 @@ public class MedAdd extends AppCompatActivity {
                 if (!tempFile.createNewFile()) {
                     return;
                 }
+            } InputStream in = new FileInputStream(originalApk);
+            OutputStream out = new FileOutputStream(tempFile);
+
+            byte[] buf = new byte[1024];
+            int len;
+            while ((len = in.read(buf)) > 0) {
+                out.write(buf, 0, len);
             }
+            in.close();
+            out.close();
+            System.out.println("File copied.");
+            //Open share dialog
+            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(tempFile));
+            startActivity(Intent.createChooser(intent, "Share app via"));
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
