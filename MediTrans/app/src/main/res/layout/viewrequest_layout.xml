@@ -50,5 +50,11 @@
             android:layout_weight="0.3"
             android:layout_height="wrap_content"
             android:text="Address"/>
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="address"/>
 
 
