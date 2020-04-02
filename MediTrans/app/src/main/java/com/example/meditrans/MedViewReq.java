@@ -19,4 +19,6 @@ public class MedViewReq extends AppCompatActivity {
     public void getrequest() {
         AddReqClass jobsBean1 = new AddReqClass();
         jobsBean1.setBname("kavya");
+        jobsBean1.setBmobile("6605349686");
+        jobsBean1.setBaddress("maryville");
     }
