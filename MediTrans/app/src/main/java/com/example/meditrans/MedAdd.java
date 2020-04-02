@@ -14,6 +14,10 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.volley.Request;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+
 
 public class MedAdd extends AppCompatActivity {
     EditText et1,et2,et3,et4,et5;
@@ -99,5 +103,14 @@ public class MedAdd extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    private void supload() {
+        //calling url
+        String serverurl = "";
+        //sending request to url for response Or Request Constructer with 4 parameters
 
-}
+        StringRequest sr = new StringRequest(Request.Method.POST, serverurl, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }
