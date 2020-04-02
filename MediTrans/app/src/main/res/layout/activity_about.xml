@@ -15,7 +15,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About Application"
-        android:textColor="#0277BD"
+        android:textColor="#009688"
         android:layout_gravity="center_horizontal"
         android:padding="6dp"
         android:textSize="18sp" />
