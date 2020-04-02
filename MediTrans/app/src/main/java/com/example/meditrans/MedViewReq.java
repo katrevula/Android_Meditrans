@@ -16,3 +16,4 @@ public class MedViewReq extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyviewreq);
         getrequest();
     }
+    public void getrequest() {
