@@ -17,31 +17,39 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="M"
-            android:textColor="#2196F3"
+            android:textColor="#009688"
             android:textSize="62sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="edi"
-            android:textColor="#2196F3"
+            android:textColor="#009688"
             android:textSize="42sp"/>
-        <ImageView
-            android:layout_width="50dp"
-            android:layout_height="100dp"
+<!--        <ImageView-->
+<!--            android:layout_width="50dp"-->
+<!--            android:layout_height="100dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:src="@drawable/meditranslogo"/>-->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/meditranslogo"/>
+            android:text="T"
+            android:textColor="#009688"
+            android:textSize="62sp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:text="rans"
-            android:textColor="#2196F3"
+            android:textColor="#009688"
             android:textSize="42sp"/>
     </LinearLayout>
     <Button
         android:id="@+id/ba"
-        android:background="#2196F3"
+        android:background="#009688"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:text="MEDICO"
@@ -52,7 +60,7 @@
         android:id="@+id/bb"
         android:layout_gravity="center"
         android:layout_width="250dp"
-        android:background="#2196F3"
+        android:background="#009688"
         android:textColor="#fff"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
