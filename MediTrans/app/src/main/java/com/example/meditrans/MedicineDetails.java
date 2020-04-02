@@ -66,6 +66,10 @@ public class MedicineDetails extends AppCompatActivity  {
         jobsBean1.setMedcost("90");
         jobsBean1.setMeddesc("fever");
         data.add(jobsBean1);
+
+        aadapter = new MedicineAdapter(data, getApplicationContext());
+
+        
     }
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
