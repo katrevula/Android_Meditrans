@@ -25,6 +25,7 @@ import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -179,3 +180,7 @@ public class MedAdd extends AppCompatActivity {
         String filePath = app.sourceDir;
 
         Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("*/*");
+
+        // Append file and send Intent
+        File originalApk = new File(filePath);
