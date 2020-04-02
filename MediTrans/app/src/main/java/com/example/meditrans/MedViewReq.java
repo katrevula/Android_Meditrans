@@ -31,4 +31,9 @@ public class MedViewReq extends AppCompatActivity {
     private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
         List<AddReqClass> data;
         Context applicationContext;
+
+        public ViewRequestAdapter(List<AddReqClass> data, Context applicationContext) {
+            this.applicationContext = applicationContext;
+            this.data = data;
+        }
     }

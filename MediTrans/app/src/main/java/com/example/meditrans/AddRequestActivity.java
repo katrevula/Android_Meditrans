@@ -44,7 +44,7 @@ public class AddRequestActivity extends AppCompatActivity {
                     trquest.setError("Type your Request or Prescription");
                 }
                 else {
-                    Toast.makeText(getApplicationContext(),"Submitted your request",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Submitted your request",Toast.LENGTH_LONG).show();
 //                    addrequests();
                 }
 
