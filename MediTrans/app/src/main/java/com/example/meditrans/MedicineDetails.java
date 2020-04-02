@@ -61,6 +61,7 @@ public class MedicineDetails extends AppCompatActivity  {
     public void getdetails() {
         data.clear();
         Bean jobsBean1 = new Bean();
+        jobsBean1.setId("1234");
     }
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
