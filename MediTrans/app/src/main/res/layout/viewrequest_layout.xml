@@ -33,5 +33,8 @@
             android:layout_weight="0.3"
             android:layout_height="wrap_content"
             android:text="Mobile"/>
+        <TextView
+            android:id="@+id/phnumber"
+            android:layout_width="0dp"
 
 
