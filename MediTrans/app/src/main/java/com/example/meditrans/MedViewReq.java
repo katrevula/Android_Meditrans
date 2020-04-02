@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 public class MedViewReq extends AppCompatActivity {
     RecyclerView recyclerView;
+    String userid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
