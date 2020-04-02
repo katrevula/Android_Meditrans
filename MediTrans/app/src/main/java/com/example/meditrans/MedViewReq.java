@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -12,14 +13,17 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 
 public class MedViewReq extends AppCompatActivity {
     RecyclerView recyclerView;
     ViewRequestAdapter viewRequestAdapter;
+    List<AddReqClass> data = new ArrayList<>();
     String userid;
 
     @Override
@@ -36,6 +40,10 @@ public class MedViewReq extends AppCompatActivity {
         jobsBean1.setBaddress("maryville");
         jobsBean1.setBrequest("fever");
         data.add(jobsBean1);
+        viewRequestAdapter =new  ViewRequestAdapter(data, getApplicationContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(viewRequestAdapter);
          }
     private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
         List<AddReqClass> data;
