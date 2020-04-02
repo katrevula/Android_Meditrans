@@ -59,7 +59,7 @@ public class MedicineDetails extends AppCompatActivity  {
     }
 
     public void getdetails() {
-        
+        data.clear();
     }
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
