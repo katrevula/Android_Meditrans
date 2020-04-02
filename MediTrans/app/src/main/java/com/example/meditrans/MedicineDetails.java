@@ -63,6 +63,7 @@ public class MedicineDetails extends AppCompatActivity  {
         Bean jobsBean1 = new Bean();
         jobsBean1.setId("1234");
         jobsBean1.setMedname("dolo");
+        jobsBean1.setMedcost("90");
     }
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
