@@ -23,8 +23,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.List;
 
-//import com.example.abhinaya.meditrans.Network.API;
-//import androidx.cardview.widget.CardView;
+
 
 public class Customer  extends AppCompatActivity {
     int id;

@@ -17,7 +17,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 06f3b6ecb5956f0ece0cdec717d06c57b97956a7
 
 public class Medico extends AppCompatActivity {
     EditText e1, e2;
