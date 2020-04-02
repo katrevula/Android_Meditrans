@@ -58,11 +58,11 @@ public class MedAdd extends AppCompatActivity {
                         et4.setError("Not Empty");
                         et5.setError("Not Empty");
 
-//                }else{
-//                    int selectedId=rg.getCheckedRadioButtonId();
-//                    rba=(RadioButton)findViewById(selectedId);
-//                    //            supload();
-//                }
+                }else{
+                    int selectedId=rg.getCheckedRadioButtonId();
+                    rba=(RadioButton)findViewById(selectedId);
+                               supload();
+                }
             }
 
 
