@@ -53,5 +53,9 @@ public class MedViewReq extends AppCompatActivity {
             holder.sdesript.setText(data.get(position).getBrequest());
             holder.addres.setText(data.get(position).getBaddress());
         }
+        @Override
+        public int getItemCount() {
+            return data.size();
+        }
 
     }
