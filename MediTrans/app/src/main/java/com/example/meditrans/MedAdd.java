@@ -45,19 +45,19 @@ public class MedAdd extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "Medicine added", Toast.LENGTH_SHORT).show();
 
 
-//                String medname = et1.getText().toString();
-//                String medcode = et2.getText().toString();
-//                String medcost = et3.getText().toString();
-//                String medshop=et4.getText().toString();
-//                String meddes=et5.getText().toString();
-//
-//                if(medname.equals("")&&medcode.equals("")&&medcost.equals("")&&medshop.equals("")&&meddes.equals("")){
-//                    et1.setError("Not Empty");
-//                    et2.setError("Not Empty");
-//                    et3.setError("Not Empty");
-//                    et4.setError("Not Empty");
-//                    et5.setError("Not Empty");
-//
+                String medname = et1.getText().toString();
+               String medcode = et2.getText().toString();
+                String medcost = et3.getText().toString();
+                String medshop=et4.getText().toString();
+                String meddes=et5.getText().toString();
+
+                    if(medname.equals("")&&medcode.equals("")&&medcost.equals("")&&medshop.equals("")&&meddes.equals("")){
+                        et1.setError("Not Empty");
+                        et2.setError("Not Empty");
+                        et3.setError("Not Empty");
+                        et4.setError("Not Empty");
+                        et5.setError("Not Empty");
+
 //                }else{
 //                    int selectedId=rg.getCheckedRadioButtonId();
 //                    rba=(RadioButton)findViewById(selectedId);
