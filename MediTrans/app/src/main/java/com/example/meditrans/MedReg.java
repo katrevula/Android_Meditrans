@@ -82,10 +82,7 @@ public class MedReg extends AppCompatActivity {
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
-
-
                 submitform();
-
             }
         });
     }
