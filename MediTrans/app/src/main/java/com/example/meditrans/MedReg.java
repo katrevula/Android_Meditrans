@@ -51,6 +51,8 @@ public class MedReg extends AppCompatActivity {
         awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
         awesomeValidation.addValidation(this, R.id.sn,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
+        awesomeValidation.addValidation(this, R.id.ui,
+                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
