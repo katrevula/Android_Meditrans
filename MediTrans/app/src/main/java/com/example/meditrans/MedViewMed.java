@@ -1,6 +1,7 @@
 package com.example.meditrans;
 
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -14,7 +15,7 @@ import android.widget.TextView;
 public class MedViewMed extends AppCompatActivity {
     TableLayout tl1;
     TextView tv0, tv1, tv2, tv3, tv4;
-}
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,4 +75,20 @@ public class MedViewMed extends AppCompatActivity {
             case android.R.id.home:
                 onBackPressed();
                 return true;
+            case R.id.shome:
+                Intent i = new Intent(getApplicationContext(), MediTrans.class);
+                startActivity(i);
+                return true;
+            case R.id.about:
+                i = new Intent(getApplicationContext(), AboutActivity.class);
+                startActivity(i);
+                return true;
+            case R.id.contact:
+                i = new Intent(getApplicationContext(), ContactActivity.class);
+                startActivity(i);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 }
