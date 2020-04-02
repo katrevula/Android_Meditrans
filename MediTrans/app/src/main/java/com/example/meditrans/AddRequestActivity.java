@@ -37,6 +37,7 @@ public class AddRequestActivity extends AppCompatActivity {
                 String smob = tmobile.getText().toString();
                 String sadd = taddress.getText().toString();
                 String sreq = trquest.getText().toString();
+                if(snam.equals("")&&smob.equals("")&&sadd.equals("")&&sreq.equals("")){
 
                 Toast.makeText(getApplicationContext(), "Submitted your request", Toast.LENGTH_SHORT).show();
 
