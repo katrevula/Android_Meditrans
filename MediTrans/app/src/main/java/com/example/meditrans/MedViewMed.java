@@ -13,5 +13,6 @@ public class MedViewMed extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_view_med);
+        tl1 = findViewById(R.id.viewmed);
 
 }
