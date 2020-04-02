@@ -47,6 +47,8 @@ public class MedReg extends AppCompatActivity {
         rb2=findViewById(R.id.rbb);
         b1=findViewById(R.id.bi);
         t1=findViewById(R.id.btb);
+
+        
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
