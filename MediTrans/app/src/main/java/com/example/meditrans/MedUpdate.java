@@ -71,8 +71,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
-//import com.basgeekball.awesomevalidation.AwesomeValidation;
-//import com.basgeekball.awesomevalidation.ValidationStyle;
+
 
 public class MedUpdate extends AppCompatActivity {
 
