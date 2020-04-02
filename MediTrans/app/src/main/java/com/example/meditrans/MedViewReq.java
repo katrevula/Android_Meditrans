@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 public class MedViewReq extends AppCompatActivity {
     RecyclerView recyclerView;
+    ViewRequestAdapter viewRequestAdapter;
     String userid;
 
     @Override
@@ -22,4 +23,6 @@ public class MedViewReq extends AppCompatActivity {
         jobsBean1.setBmobile("6605349686");
         jobsBean1.setBaddress("maryville");
         jobsBean1.setBrequest("fever");
-    }
+        data.add(jobsBean1);
+         }
+    private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
