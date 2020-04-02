@@ -4,6 +4,8 @@ package com.example.meditrans;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Menu;
+import android.view.MenuInflater;
 import android.widget.TableLayout;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -57,4 +59,10 @@ public class MedViewMed extends AppCompatActivity {
         tl1.addView(row);
 
 }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_dots, menu);
+        return true;
+    }
 }
