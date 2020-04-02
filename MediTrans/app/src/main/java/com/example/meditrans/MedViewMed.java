@@ -1,13 +1,16 @@
 package com.example.meditrans;
 
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TableLayout;
 import android.widget.TableRow;
+import android.widget.TextView;
 
 public class MedViewMed extends AppCompatActivity {
     TableLayout tl1;
+    TextView tv0, tv1, tv2, tv3, tv4;
 }
 
     @Override
@@ -21,5 +24,37 @@ public class MedViewMed extends AppCompatActivity {
         TableRow row = new TableRow(getApplicationContext());
         TableRow.LayoutParams lp = new TableRow.LayoutParams(TableRow.LayoutParams.WRAP_CONTENT);
         row.setLayoutParams(lp);
+        tv0 = new TextView(getApplicationContext());
+        tv1 = new TextView(getApplicationContext());
+        tv2 = new TextView(getApplicationContext());
+        tv3 = new TextView(getApplicationContext());
+        tv4 = new TextView(getApplicationContext());
+        tv0.setText("f109");
+        tv0.setTextColor(Color.BLACK);
+        tv0.setPadding(5, 5, 5, 5);
+        tv0.setBackgroundColor(R.drawable.cell_shape3);
+        tv1.setText("dolo");
+        tv1.setTextColor(Color.BLACK);
+        tv1.setPadding(5, 5, 5, 5);
+        tv1.setBackgroundResource(R.drawable.cell_shape3);
+        tv2.setText("123");
+        tv2.setTextColor(Color.BLACK);
+        tv2.setPadding(5, 5, 5, 5);
+        tv2.setBackgroundResource(R.drawable.cell_shape3);
+        tv3.setText("70");
+        tv3.setTextColor(Color.BLACK);
+        tv3.setPadding(5, 5, 5, 5);
+        tv3.setBackgroundResource(R.drawable.cell_shape3);
+        tv4.setText("available");
+        tv4.setTextColor(Color.BLACK);
+        tv4.setPadding(5, 5, 5, 5);
+        tv4.setBackgroundResource(R.drawable.cell_shape3);
+        row.addView(tv0);
+        row.addView(tv1);
+        row.addView(tv2);
+        row.addView(tv3);
+        row.addView(tv4);
+        tl1.addView(row);
 
+}
 }
