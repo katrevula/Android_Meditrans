@@ -6,6 +6,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -64,6 +65,12 @@ public class MedicineDetails extends AppCompatActivity  {
         jobsBean1.setId("1234");
         jobsBean1.setMedname("dolo");
         jobsBean1.setMedcost("90");
+        jobsBean1.setMeddesc("fever");
+        data.add(jobsBean1);
+
+        aadapter = new MedicineAdapter(data, getApplicationContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+
     }
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
