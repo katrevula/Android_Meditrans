@@ -19,7 +19,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
-
+import com.basgeekball.awesomevalidation.ValidationStyle;
 
 
 public class MedReg extends AppCompatActivity {
@@ -48,6 +48,7 @@ public class MedReg extends AppCompatActivity {
         b1=findViewById(R.id.bi);
         t1=findViewById(R.id.btb);
 
+        awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
         
         t1.setOnClickListener(new View.OnClickListener() {
             @Override
