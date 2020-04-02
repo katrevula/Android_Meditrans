@@ -15,6 +15,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -22,6 +23,9 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 
 import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class MedAdd extends AppCompatActivity {
@@ -116,12 +120,12 @@ public class MedAdd extends AppCompatActivity {
         StringRequest sr = new StringRequest(Request.Method.POST, serverurl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
-                try{
-                    JSONObject jsonObject=new JSONObject(response);
-                    String res=jsonObject.getString("result");//result should be matched with url link response ie,{"result":"success"}
-                    if(res.equals("success")) //array key
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    String res = jsonObject.getString("result");//result should be matched with url link response ie,{"result":"success"}
+                    if (res.equals("success")) //array key
                     {
-                        Toast.makeText(getApplicationContext(),res,Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getApplicationContext(), res, Toast.LENGTH_SHORT).show();
                         et1.setText(null);
                         et2.setText(null);
                         et3.setText(null);
@@ -129,13 +133,13 @@ public class MedAdd extends AppCompatActivity {
                         et5.setText(null);
 
 
-                    }else {
-                        Toast.makeText(getApplicationContext(),"error",Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "error", Toast.LENGTH_SHORT).show();
                     }
 
 
                 } catch (Exception e) {
-                    Log.e("ERROR","Exception");
+                    Log.e("ERROR", "Exception");
                 }
 
             }
@@ -146,7 +150,26 @@ public class MedAdd extends AppCompatActivity {
                 Log.d("Main", "" + error.getMessage() + "," + error.toString());
 
             }
-        }){
-        }
+        }) {
+            @Override
+            public Map<String, String> getParams() throws AuthFailureError {
+                //To Read data from Edit fields and convert to string
+                String smedname = et1.getText().toString();
+                String smedcode = et2.getText().toString();
+                String smedcost = et3.getText().toString();
+                String smedshop = et4.getText().toString();
+                String smeddes = et5.getText().toString();
+
+                String sradiobutton = ((RadioButton) findViewById(rg.getCheckedRadioButtonId())).getText().toString();
+                Map<String, String> data = new HashMap<String, String>();//to bind group of data
+                //to insert data from edit feilds into table feilds
+                data.put("name", smedname);
+                data.put("code", smedcode);
+                data.put("cost", smedcost);
+                data.put("shopname", smedshop);
+                data.put("description", smeddes);
+                data.put("avaliable", sradiobutton);
+                return data;
             }
-        }
+        };
+    }
