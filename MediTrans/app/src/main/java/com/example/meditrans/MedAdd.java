@@ -15,7 +15,6 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-//import com.example.abhinaya.meditrans.Network.API;
 
 public class MedAdd extends AppCompatActivity {
     EditText et1,et2,et3,et4,et5;

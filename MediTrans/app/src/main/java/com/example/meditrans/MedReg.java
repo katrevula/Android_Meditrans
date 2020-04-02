@@ -20,9 +20,7 @@ import android.widget.TextView;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 
-//import com.example.abhinaya.meditrans.Network.API;
-//import com.example.abhinaya.meditrans.Network.VolleySingleton;
-//
+
 
 public class MedReg extends AppCompatActivity {
     EditText e1,e2,e3,e4,e5,e6,e7,e8,e9;

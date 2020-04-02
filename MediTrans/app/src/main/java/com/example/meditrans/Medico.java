@@ -17,8 +17,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-//import com.example.abhinaya.meditrans.Network.API;
-//import com.example.abhinaya.meditrans.Network.VolleySingleton;
 
 public class Medico extends AppCompatActivity {
     EditText e1, e2;
