@@ -51,13 +51,13 @@ public class MedAdd extends AppCompatActivity {
                 String medshop=et4.getText().toString();
                 String meddes=et5.getText().toString();
 
-//                if(medname.equals("")&&medcode.equals("")&&medcost.equals("")&&medshop.equals("")&&meddes.equals("")){
-//                    et1.setError("Not Empty");
-//                    et2.setError("Not Empty");
-//                    et3.setError("Not Empty");
-//                    et4.setError("Not Empty");
-//                    et5.setError("Not Empty");
-//
+                    if(medname.equals("")&&medcode.equals("")&&medcost.equals("")&&medshop.equals("")&&meddes.equals("")){
+                        et1.setError("Not Empty");
+                        et2.setError("Not Empty");
+                        et3.setError("Not Empty");
+                        et4.setError("Not Empty");
+                        et5.setError("Not Empty");
+
 //                }else{
 //                    int selectedId=rg.getCheckedRadioButtonId();
 //                    rba=(RadioButton)findViewById(selectedId);
