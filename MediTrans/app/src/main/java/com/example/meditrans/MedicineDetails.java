@@ -46,7 +46,7 @@ public class MedicineDetails extends AppCompatActivity  {
         searchViews = findViewById(R.id.searchView);
 //        searchViews.setOnQueryTextListener(this);
 
-        //    getdetails();
+            getdetails();
 
         addreq = findViewById(R.id.addrequest);
         addreq.setOnClickListener(new View.OnClickListener() {
