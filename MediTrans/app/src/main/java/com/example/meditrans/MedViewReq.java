@@ -21,4 +21,5 @@ public class MedViewReq extends AppCompatActivity {
         jobsBean1.setBname("kavya");
         jobsBean1.setBmobile("6605349686");
         jobsBean1.setBaddress("maryville");
+        jobsBean1.setBrequest("fever");
     }
