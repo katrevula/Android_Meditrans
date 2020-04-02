@@ -1,8 +1,11 @@
 package com.example.meditrans;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.RecyclerView;
+
+import java.util.List;
 
 
 public class MedViewReq extends AppCompatActivity {
@@ -26,3 +29,6 @@ public class MedViewReq extends AppCompatActivity {
         data.add(jobsBean1);
          }
     private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
+        List<AddReqClass> data;
+        Context applicationContext;
+    }
