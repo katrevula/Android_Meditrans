@@ -60,7 +60,10 @@ public class MedReg extends AppCompatActivity {
         awesomeValidation.addValidation(this, R.id.son,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
-
+        awesomeValidation.addValidation(this, R.id.mn,
+                "^[6-9]{1}[0-9]{9}$", R.string.nameerror);
+        awesomeValidation.addValidation(this, R.id.lc,
+                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
         awesomeValidation.addValidation(this, R.id.e,
                 Patterns.EMAIL_ADDRESS, R.string.nameerror);
@@ -80,6 +83,8 @@ public class MedReg extends AppCompatActivity {
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
 
+
+                submitform();
 
             }
         });
