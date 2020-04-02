@@ -109,4 +109,8 @@ public class MedAdd extends AppCompatActivity {
         //sending request to url for response Or Request Constructer with 4 parameters
 
         StringRequest sr = new StringRequest(Request.Method.POST, serverurl, new Response.Listener<String>() {
-}
+            @Override
+            public void onResponse(String response) {
+
+            }
+        }
