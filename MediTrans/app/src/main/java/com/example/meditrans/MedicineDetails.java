@@ -24,7 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MedicineDetails extends AppCompatActivity  {
+public class MedicineDetails extends AppCompatActivity {
     int id;
     RecyclerView recyclerView;
     MedicineAdapter aadapter;
@@ -34,25 +34,26 @@ public class MedicineDetails extends AppCompatActivity  {
     SearchView searchViews;
     SharedPreferences sharedPreferences;
     String shopnames;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_details);
-        progressBar=findViewById(R.id.progress);
-        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
-        shopnames = sharedPreferences.getString("SHOP",null);
-        Toast.makeText(getApplicationContext(),shopnames,Toast.LENGTH_SHORT).show();
+        progressBar = findViewById(R.id.progress);
+        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
+        shopnames = sharedPreferences.getString("SHOP", null);
+        Toast.makeText(getApplicationContext(), shopnames, Toast.LENGTH_SHORT).show();
         recyclerView = findViewById(R.id.recycl);
         searchViews = findViewById(R.id.searchView);
 //        searchViews.setOnQueryTextListener(this);
 
-            getdetails();
+        getdetails();
 
         addreq = findViewById(R.id.addrequest);
         addreq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(),AddRequestActivity.class);
+                Intent i = new Intent(getApplicationContext(), AddRequestActivity.class);
                 startActivity(i);
             }
         });
@@ -73,6 +74,7 @@ public class MedicineDetails extends AppCompatActivity  {
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(aadapter);
     }
+
     private class MedicineAdapter extends RecyclerView.Adapter<MedicineDetails.MedicineAdapter.MyViewHolder> {
         List<Bean> horizontalList;
         Context context;
@@ -81,6 +83,7 @@ public class MedicineDetails extends AppCompatActivity  {
             this.horizontalList = horizontalList;
             this.context = context;
         }
+
         @NonNull
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -98,14 +101,14 @@ public class MedicineDetails extends AppCompatActivity  {
         }
 
         @Override
-        public int getItemCount()
-        {
+        public int getItemCount() {
             return horizontalList.size();
         }
+
         public void filter(String text) {
             List<Bean> filterdNames = new ArrayList<>();
             //looping through existing elements
-            for (Bean s: horizontalList ) {
+            for (Bean s : horizontalList) {
                 //if the existing elements contains the search input
                 if (s.getMedname().toLowerCase().contains(text.toLowerCase())) {
                     //adding the element to filtered list
@@ -115,12 +118,15 @@ public class MedicineDetails extends AppCompatActivity  {
             //calling a method of the adapter class and passing the filtered list
             aadapter.filterList(filterdNames);
         }
+
         public void filterList(List<Bean> data) {
             this.horizontalList = data;
             notifyDataSetChanged();
         }
+
         class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView st5, st6,st7;
+            TextView st5, st6, st7;
+
             MyViewHolder(View view) {
                 super(view);
                 st5 = view.findViewById(R.id.t4);
@@ -129,40 +135,37 @@ public class MedicineDetails extends AppCompatActivity  {
             }
         }
     }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
         inflater.inflate(R.menu.menu_dots, menu);
         return true;
     }
+
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
-    {
+    public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
-        switch (item.getItemId())
-        {
+        switch (item.getItemId()) {
             case android.R.id.home:
                 onBackPressed();
                 return true;
             case R.id.shome:
-                Intent i =new Intent(getApplicationContext(),MediTrans.class);
+                Intent i = new Intent(getApplicationContext(), MediTrans.class);
                 startActivity(i);
                 return true;
             case R.id.about:
-                i =new Intent(getApplicationContext(),AboutActivity.class);
+                i = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.contact:
-                i =new Intent(getApplicationContext(),ContactActivity.class);
+                i = new Intent(getApplicationContext(), ContactActivity.class);
                 startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
     }
-
-
-
 
 
 }
