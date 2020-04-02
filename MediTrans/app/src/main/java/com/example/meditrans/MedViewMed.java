@@ -3,8 +3,11 @@ package com.example.meditrans;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.widget.TableLayout;
 
 public class MedViewMed extends AppCompatActivity {
+    TableLayout tl1;
+}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
