@@ -84,6 +84,8 @@ public class MedReg extends AppCompatActivity {
                 startActivity(a);
 
 
+                submitform();
+
             }
         });
     }
