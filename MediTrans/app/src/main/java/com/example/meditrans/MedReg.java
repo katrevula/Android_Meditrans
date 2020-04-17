@@ -25,18 +25,7 @@ import androidx.core.app.ActivityCompat;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
-<<<<<<< HEAD
-//import com.google.android.gms.tasks.OnCompleteListener;
-//import com.google.android.gms.tasks.Task;
-//import com.google.firebase.auth.FirebaseAuth;
-//import com.google.firebase.auth.FirebaseUser;
-=======
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
-import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
->>>>>>> 7a448c84013577194366e8933343f5164f32e466
+
 
 
 public class MedReg extends AppCompatActivity {
@@ -56,15 +45,15 @@ public class MedReg extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_reg);
-        e1 = findViewById(R.id.sn);
-        e2 = findViewById(R.id.ui);
-        e3 = findViewById(R.id.p);
-        e4 = findViewById(R.id.son);
-        e5 = findViewById(R.id.mn);
-        e6 = findViewById(R.id.sa);
-        e7 = findViewById(R.id.lc);
-        e8 = findViewById(R.id.t);
-        e9 = findViewById(R.id.e);
+        e1 = findViewById(R.id.shopName);
+        e2 = findViewById(R.id.userName);
+        e3 = findViewById(R.id.password);
+        e4 = findViewById(R.id.ownerName);
+        e5 = findViewById(R.id.phone);
+        e6 = findViewById(R.id.email);
+        e7 = findViewById(R.id.shopAddress);
+        e8 = findViewById(R.id.location);
+        e9 = findViewById(R.id.time);
         r1 = findViewById(R.id.rg);
         rb1 = findViewById(R.id.rba);
         rb2 = findViewById(R.id.rbb);
@@ -72,21 +61,21 @@ public class MedReg extends AppCompatActivity {
         t1 = findViewById(R.id.btb);
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
-        awesomeValidation.addValidation(this, R.id.sn,
+        awesomeValidation.addValidation(this, R.id.shopName,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
 
-        awesomeValidation.addValidation(this, R.id.ui,
+        awesomeValidation.addValidation(this, R.id.userName,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.son,
+        awesomeValidation.addValidation(this, R.id.ownerName,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
-        awesomeValidation.addValidation(this, R.id.mn,
+        awesomeValidation.addValidation(this, R.id.phone,
                 "^[6-9]{1}[0-9]{9}$", R.string.nameerror);
-        awesomeValidation.addValidation(this, R.id.lc,
+        awesomeValidation.addValidation(this, R.id.shopAddress,
                 "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
 
-        awesomeValidation.addValidation(this, R.id.e,
+        awesomeValidation.addValidation(this, R.id.time,
                 Patterns.EMAIL_ADDRESS, R.string.nameerror);
 
         t1.setOnClickListener(new View.OnClickListener() {
