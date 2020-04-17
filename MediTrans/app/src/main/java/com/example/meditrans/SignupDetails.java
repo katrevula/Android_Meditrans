@@ -44,4 +44,11 @@ public class SignupDetails {
     public void setPassword(String password) {
         this.password = password;
     }
+    public String getOwnerName() {
+        return ownerName;
+    }
+
+    public void setOwnerName(String ownerName) {
+        this.ownerName = ownerName;
+    }
 }
