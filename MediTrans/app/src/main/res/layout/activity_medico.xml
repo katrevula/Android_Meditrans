@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="20dp"
         tools:context=".Medico">
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -30,11 +31,11 @@
                 android:text="edi"
                 android:textColor="#26A69A"
                 android:textSize="42sp"/>
-<!--            <ImageView-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:src="@drawable/meditranslogo"/>-->
+            <!--            <ImageView-->
+            <!--                android:layout_width="50dp"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:src="@drawable/meditranslogo"/>-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -51,12 +52,13 @@
                 android:textColor="#26A69A"
                 android:textSize="42sp"/>
         </LinearLayout>
-        <android.support.design.widget.TextInputLayout
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="6dp"
             android:layout_marginTop="25dp">
-            <EditText
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:backgroundTint="#29B6F6"
                 android:id="@+id/uid"
                 android:layout_width="match_parent"
@@ -67,13 +69,14 @@
                 android:inputType="text"
                 android:drawableStart="@drawable/ic_pw"
                 tools:targetApi="lollipop" />
-        </android.support.design.widget.TextInputLayout>
-        <android.support.design.widget.TextInputLayout
+        </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="6dp"
             android:layout_marginTop="20dp">
-            <EditText
+
+            <com.google.android.material.textfield.TextInputEditText
                 android:backgroundTint="#29B6F6"
                 android:id="@+id/pass"
                 android:padding="6dp"
@@ -84,7 +87,7 @@
                 android:drawableLeft="@drawable/ic_un"
                 android:drawableStart="@drawable/ic_un"
                 tools:targetApi="lollipop" />
-        </android.support.design.widget.TextInputLayout>
+        </com.google.android.material.textfield.TextInputLayout>
         <Button
             android:id="@+id/bc"
             android:layout_width="250dp"
