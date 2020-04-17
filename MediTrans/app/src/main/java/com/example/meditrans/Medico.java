@@ -7,8 +7,7 @@ import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,16 +15,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class Medico extends AppCompatActivity {
     EditText e1, e2;
     Button b1;
     TextView t1;
     SharedPreferences sharedPreferences;
+    FirebaseAuth firebaseAuth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medico);
+        firebaseAuth = FirebaseAuth.getInstance();
+
         sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
         int PERMISSION_ALL = 1;
         String[] PERMISSIONS = {Manifest.permission.INTERNET,Manifest.permission.CALL_PHONE,Manifest.permission.ACCESS_NETWORK_STATE};
@@ -48,9 +61,20 @@ public class Medico extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                firebaseAuth.signInWithEmailAndPassword(e1.getText().toString(), e2.getText().toString()).addOnCompleteListener(Medico.this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (!task.isSuccessful()) {
 
-                Intent a = new Intent(getApplicationContext(), MedHome.class);
-                startActivity(a);
+                            Toast.makeText(Medico.this, "Failed to login", Toast.LENGTH_SHORT).show();
+                        } else {
+
+                            startActivity(new Intent(Medico.this, MedHome.class));
+                        }
+
+                    }
+                });
+
             }
         });
     }

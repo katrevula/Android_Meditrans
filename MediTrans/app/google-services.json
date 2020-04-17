@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "953900790915",
+    "firebase_url": "https://meditrans-78e4b.firebaseio.com",
+    "project_id": "meditrans-78e4b",
+    "storage_bucket": "meditrans-78e4b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:953900790915:android:f48f5dcd016c2e638097b6",
+        "android_client_info": {
+          "package_name": "com.example.meditrans"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "953900790915-dfalkiah6cqbkhgkrb1g41oroa46u5f7.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.meditrans",
+            "certificate_hash": "9cc1552218dc71d1773eadc6e16ee2eed0c7cefd"
+          }
+        },
+        {
+          "client_id": "953900790915-fg1tfkjh02843mevn7q5i24jv3h9716h.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCIL1KOVP3tTvzeQxaKsYYKfXxAk32kyTQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "953900790915-fg1tfkjh02843mevn7q5i24jv3h9716h.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

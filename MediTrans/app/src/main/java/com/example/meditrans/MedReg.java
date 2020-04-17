@@ -5,8 +5,7 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-import android.support.v4.app.ActivityCompat;
-import android.support.v7.app.AppCompatActivity;
+
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Menu;
@@ -15,12 +14,25 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MedReg extends AppCompatActivity {
@@ -29,7 +41,14 @@ public class MedReg extends AppCompatActivity {
     RadioButton rb1, rb2;
     Button b1;
     TextView t1;
+
     private AwesomeValidation awesomeValidation;
+
+    FirebaseAuth mFirebaseAuth;
+    DatabaseReference databaseReference;
+    final FirebaseDatabase database = FirebaseDatabase.getInstance();
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +68,8 @@ public class MedReg extends AppCompatActivity {
         rb2 = findViewById(R.id.rbb);
         b1 = findViewById(R.id.bi);
         t1 = findViewById(R.id.btb);
+        mFirebaseAuth = FirebaseAuth.getInstance();
+        database.getReference("messages/users");
 
         awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
         awesomeValidation.addValidation(this, R.id.sn,
@@ -80,9 +101,55 @@ public class MedReg extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 
-                Intent a = new Intent(getApplicationContext(), Medico.class);
-                startActivity(a);
-                submitform();
+                String uName = e9.getText().toString();
+                String pwd = e3.getText().toString();
+                mFirebaseAuth.createUserWithEmailAndPassword(uName, pwd)
+                        .addOnCompleteListener(MedReg.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(MedReg.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                                } else {
+                                    String shopName = e1.getText().toString();
+                                    String userName = e2.getText().toString();
+                                    String password = e3.getText().toString();
+                                    String ownerName = e4.getText().toString();
+                                    String phone = e5.getText().toString();
+                                    String email = e6.getText().toString();
+                                    String shopAddress = e7.getText().toString();
+                                    String location = e8.getText().toString();
+                                    String time = e9.getText().toString();
+                                    String doorDelivery = e2.getText().toString();
+
+
+                                    //getting the user-id which is same as current user
+                                    String user_id = mFirebaseAuth.getCurrentUser().getUid();
+                                    //connecting the database reference
+                                    databaseReference = databaseReference.child(user_id);
+                                    SignupDetails userData = new SignupDetails(shopName, userName, password, ownerName, phone, email, shopAddress, location, time);
+                                    databaseReference.setValue(userData);
+                                    Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();
+
+                                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                                    FirebaseUser user = auth.getCurrentUser();
+
+                                    user.sendEmailVerification()
+                                            .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                                @Override
+                                                public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d("", "Email sent.");
+                                                    }
+                                                }
+                                            });
+                                    Intent a = new Intent(getApplicationContext(), Medico.class);
+                                    startActivity(a);
+                                    submitform();
+                                }
+                            }
+                        });
+
+
             }
         });
     }
