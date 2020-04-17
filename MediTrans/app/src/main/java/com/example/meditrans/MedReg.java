@@ -106,6 +106,9 @@ public class MedReg extends AppCompatActivity {
                                     //getting the user-id which is same as current user
                                     String user_id = mFirebaseAuth.getCurrentUser().getUid();
                                     //connecting the database reference
+                                    databaseReference = databaseReference.child(user_id);
+                                    SignupDetails userData = new SignupDetails(shopName, userName, password, ownerName, phone, email, shopAddress, location, time);
+                                    databaseReference.setValue(userData);
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
