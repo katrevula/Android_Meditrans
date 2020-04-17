@@ -58,7 +58,7 @@ public class SignupDetails {
     public void setPhone(String phone) {
         this.phone = phone;
     }
-    
+
     public String getEmail() {
         return email;
     }
@@ -66,4 +66,20 @@ public class SignupDetails {
     public void setEmail(String email) {
         this.email = email;
     }
+    public String getShopAddress() {
+        return shopAddress;
+    }
+
+    public void setShopAddress(String shopAddress) {
+        this.shopAddress = shopAddress;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
 }
