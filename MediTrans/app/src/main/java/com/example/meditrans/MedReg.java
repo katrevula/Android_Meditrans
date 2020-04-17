@@ -122,10 +122,17 @@ public class MedReg extends AppCompatActivity {
                                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                                 @Override
                                                 public void onComplete(@NonNull Task<Void> task) {
+                                                    if (task.isSuccessful()) {
+                                                        Log.d("", "Email sent.");
+                                                    }
+                                                }
+                                            });
+
 
                                     Intent a = new Intent(getApplicationContext(), Medico.class);
-                startActivity(a);
-                submitform();
+                                    startActivity(a);
+                                    submitform();
+                                }
             }
         });
     }
