@@ -1,5 +1,6 @@
 <resources>
-    <string name="app_name">MediTrans</string><string name="nameerror">Enter valid details</string>
+    <string name="app_name">MediTrans</string>
+    <string name="nameerror">Enter valid details</string>
     <string name="about">MediTransaction(MediTrans) is an application which is useful for medico distrubutors to add medicines in time to time for customers.\n\n
     Customer can view or search the medicine in avail stores. By this application, reduces the searching of medical stores for desired medicines.</string>
 </resources>
