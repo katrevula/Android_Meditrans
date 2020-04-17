@@ -23,4 +23,11 @@ public class SignupDetails {
         this.time = time;
 
     }
+    public String getShopName() {
+        return shopName;
+    }
+
+    public void setShopName(String shopName) {
+        this.shopName = shopName;
+    }
 }
