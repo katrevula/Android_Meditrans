@@ -79,6 +79,8 @@ public class MedReg extends AppCompatActivity {
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                String uName = e9.getText().toString();
+                String pwd = e3.getText().toString();
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
