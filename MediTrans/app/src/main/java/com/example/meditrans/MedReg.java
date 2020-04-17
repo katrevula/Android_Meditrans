@@ -24,6 +24,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class MedReg extends AppCompatActivity {
@@ -109,8 +111,13 @@ public class MedReg extends AppCompatActivity {
                                     databaseReference = databaseReference.child(user_id);
                                     SignupDetails userData = new SignupDetails(shopName, userName, password, ownerName, phone, email, shopAddress, location, time);
                                     databaseReference.setValue(userData);
+                                    Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();
 
-                Intent a = new Intent(getApplicationContext(), Medico.class);
+                                    FirebaseAuth auth = FirebaseAuth.getInstance();
+                                    FirebaseUser user = auth.getCurrentUser();
+
+
+                                    Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
                 submitform();
             }
