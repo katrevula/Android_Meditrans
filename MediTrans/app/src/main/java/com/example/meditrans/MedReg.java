@@ -21,13 +21,22 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
+<<<<<<< HEAD
 //import com.google.android.gms.tasks.OnCompleteListener;
 //import com.google.android.gms.tasks.Task;
 //import com.google.firebase.auth.FirebaseAuth;
 //import com.google.firebase.auth.FirebaseUser;
+=======
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+>>>>>>> 7a448c84013577194366e8933343f5164f32e466
 
 
 public class MedReg extends AppCompatActivity {
@@ -37,6 +46,10 @@ public class MedReg extends AppCompatActivity {
     Button b1;
     TextView t1;
     private AwesomeValidation awesomeValidation;
+    FirebaseAuth mFirebaseAuth;
+    DatabaseReference databaseReference;
+    final FirebaseDatabase dtabse = FirebaseDatabase.getInstance();
+
 
 
     @Override
@@ -95,8 +108,7 @@ public class MedReg extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(MedReg.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                                else {
+                                } else {
                                     String shopName = e1.getText().toString();
                                     String userName = e2.getText().toString();
                                     String password = e3.getText().toString();
@@ -132,9 +144,12 @@ public class MedReg extends AppCompatActivity {
                                     startActivity(a);
                                     submitform();
                                 }
+                            }
+                        });
             }
         });
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
