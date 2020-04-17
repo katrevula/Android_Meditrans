@@ -23,7 +23,8 @@
         android:gravity="center"
         android:layout_weight="0.5">
 
-        <android.support.v7.widget.CardView
+
+        <androidx.cardview.widget.CardView
             android:id="@+id/bd"
             app:cardCornerRadius="20dp"
             app:cardElevation="10dp"
@@ -49,9 +50,10 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center|bottom"/>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="20dp"
@@ -74,7 +76,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center|bottom"/>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
     <LinearLayout
@@ -82,7 +84,7 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:layout_weight="0.5">
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:id="@+id/bg"
             app:cardCornerRadius="20dp"
@@ -107,8 +109,8 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center|bottom" />
             </LinearLayout>
-        </android.support.v7.widget.CardView>
-        <android.support.v7.widget.CardView
+        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
             android:layout_width="150dp"
             android:layout_height="150dp"
             app:cardCornerRadius="20dp"
@@ -131,7 +133,7 @@
                     android:layout_marginTop="20dp"
                     android:layout_gravity="center|bottom"/>
             </LinearLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 
