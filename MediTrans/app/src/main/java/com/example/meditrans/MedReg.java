@@ -20,6 +20,8 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
 
@@ -31,6 +33,7 @@ public class MedReg extends AppCompatActivity {
     Button b1;
     TextView t1;
     private AwesomeValidation awesomeValidation;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +92,17 @@ public class MedReg extends AppCompatActivity {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(MedReg.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                             }
+                                else {
+                                    String shopName = e1.getText().toString();
+                                    String userName = e2.getText().toString();
+                                    String password = e3.getText().toString();
+                                    String ownerName = e4.getText().toString();
+                                    String phone = e5.getText().toString();
+                                    String email = e6.getText().toString();
+                                    String shopAddress = e7.getText().toString();
+                                    String location = e8.getText().toString();
+                                    String time = e9.getText().toString();
+                                    String doorDelivery = e2.getText().toString();
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
