@@ -31,11 +31,11 @@
                 android:text="edi"
                 android:textColor="#26A69A"
                 android:textSize="42sp"/>
-<!--            <ImageView-->
-<!--                android:layout_width="50dp"-->
-<!--                android:layout_height="100dp"-->
-<!--                android:layout_gravity="center"-->
-<!--                android:src="@drawable/meditranslogo"/>-->
+            <!--            <ImageView-->
+            <!--                android:layout_width="50dp"-->
+            <!--                android:layout_height="100dp"-->
+            <!--                android:layout_gravity="center"-->
+            <!--                android:src="@drawable/meditranslogo"/>-->
 
             <TextView
                 android:layout_width="wrap_content"

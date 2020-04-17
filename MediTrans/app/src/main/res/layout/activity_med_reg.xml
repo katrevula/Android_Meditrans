@@ -20,7 +20,7 @@
 
 
         <EditText
-            android:id="@+id/sn"
+            android:id="@+id/shopName"
             android:hint="Shop Name"
             android:background="@drawable/cell_shape2"
             android:layout_marginTop="20dp"
@@ -32,7 +32,7 @@
             android:drawableStart="@drawable/ic_shopname"
             android:padding="6dp"/>
         <EditText
-            android:id="@+id/ui"
+            android:id="@+id/userName"
             android:hint="User name"
             android:background="@drawable/cell_shape2"
             android:layout_marginTop="20dp"
@@ -44,7 +44,7 @@
             android:drawableStart="@drawable/ic_userid"
             android:padding="6dp"/>
         <EditText
-            android:id="@+id/p"
+            android:id="@+id/password"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
@@ -56,7 +56,7 @@
             android:inputType="textPassword"
             android:drawableStart="@drawable/ic_password" />
         <EditText
-            android:id="@+id/son"
+            android:id="@+id/ownerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Shop Owner Name"
@@ -68,7 +68,7 @@
             android:drawableLeft="@drawable/ic_ownername"
             android:drawableStart="@drawable/ic_ownername" />
         <EditText
-            android:id="@+id/mn"
+            android:id="@+id/phone"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Mobile Number"
@@ -80,7 +80,7 @@
             android:drawableLeft="@drawable/ic_mob"
             android:drawableStart="@drawable/ic_mob" />
         <EditText
-            android:id="@+id/e"
+            android:id="@+id/email"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email"
@@ -92,7 +92,7 @@
             android:drawableLeft="@drawable/ic_email"
             android:drawableStart="@drawable/ic_email" />
         <EditText
-            android:id="@+id/sa"
+            android:id="@+id/shopAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Shop Address"
@@ -104,7 +104,7 @@
             android:drawableLeft="@drawable/ic_address"
             android:drawableStart="@drawable/ic_address" />
         <EditText
-            android:id="@+id/lc"
+            android:id="@+id/location"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Location/City"
@@ -116,7 +116,7 @@
             android:drawableLeft="@drawable/ic_city"
             android:drawableStart="@drawable/ic_city" />
         <EditText
-            android:id="@+id/t"
+            android:id="@+id/time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Open and Close Time"

@@ -87,6 +87,3 @@ public class AddRequestActivity extends AppCompatActivity {
     }
 
 }
-
-
-
