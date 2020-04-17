@@ -81,6 +81,10 @@ public class MedReg extends AppCompatActivity {
             public void onClick(View v) {
                 String uName = e9.getText().toString();
                 String pwd = e3.getText().toString();
+                mFirebaseAuth.createUserWithEmailAndPassword(uName, pwd)
+                        .addOnCompleteListener(MedReg.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
