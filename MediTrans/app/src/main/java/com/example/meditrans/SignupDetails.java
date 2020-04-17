@@ -81,5 +81,11 @@ public class SignupDetails {
     public void setLocation(String location) {
         this.location = location;
     }
+    public String getTime() {
+        return time;
+    }
 
+    public void setTime(String time) {
+        this.time = time;
+    }
 }
