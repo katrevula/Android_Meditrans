@@ -38,6 +38,10 @@ public class MedReg extends AppCompatActivity {
     Button b1;
     TextView t1;
     private AwesomeValidation awesomeValidation;
+    FirebaseAuth mFirebaseAuth;
+    DatabaseReference databaseReference;
+    final FirebaseDatabase dtabse = FirebaseDatabase.getInstance();
+
 
 
     @Override
@@ -96,8 +100,7 @@ public class MedReg extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()) {
                                     Toast.makeText(MedReg.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                                else {
+                                } else {
                                     String shopName = e1.getText().toString();
                                     String userName = e2.getText().toString();
                                     String password = e3.getText().toString();
@@ -133,9 +136,12 @@ public class MedReg extends AppCompatActivity {
                                     startActivity(a);
                                     submitform();
                                 }
+                            }
+                        });
             }
         });
-    }
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
