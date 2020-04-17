@@ -30,4 +30,12 @@ public class SignupDetails {
     public void setShopName(String shopName) {
         this.shopName = shopName;
     }
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
 }
