@@ -18,6 +18,7 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.basgeekball.awesomevalidation.AwesomeValidation;
 import com.basgeekball.awesomevalidation.ValidationStyle;
@@ -81,6 +82,13 @@ public class MedReg extends AppCompatActivity {
             public void onClick(View v) {
                 String uName = e9.getText().toString();
                 String pwd = e3.getText().toString();
+                mFirebaseAuth.createUserWithEmailAndPassword(uName, pwd)
+                        .addOnCompleteListener(MedReg.this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (!task.isSuccessful()) {
+                                    Toast.makeText(MedReg.this, task.getException().getMessage(), Toast.LENGTH_SHORT).show();
+                            }
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
