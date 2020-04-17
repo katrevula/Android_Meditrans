@@ -103,6 +103,9 @@ public class MedReg extends AppCompatActivity {
                                     String location = e8.getText().toString();
                                     String time = e9.getText().toString();
                                     String doorDelivery = e2.getText().toString();
+                                    //getting the user-id which is same as current user
+                                    String user_id = mFirebaseAuth.getCurrentUser().getUid();
+                                    //connecting the database reference
 
                 Intent a = new Intent(getApplicationContext(), Medico.class);
                 startActivity(a);
