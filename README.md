@@ -20,5 +20,6 @@ Our application can run in every Android mobile devices.
 
 ### Test Credentials:
 ### Apk file: 
+Attached file is at Meditrans/app-debug.apk
 ### Supported Devices:
 ### Sequence Information:
