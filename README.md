@@ -25,4 +25,8 @@ Password: 123123
 ### Apk file: 
 Attached file is at Meditrans/app-debug.apk
 ### Supported Devices:
+Any device with minimum Android Sdk version API21(5.0) our application works on that device.
+
+Requires Google Play Services for Accessing Current location through Android Studio.
+
 ### Sequence Information:
