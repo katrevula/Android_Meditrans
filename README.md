@@ -1,5 +1,7 @@
 # App Name:Meditrans
 # App Logo: 
+
+<!--- ![alt text](Meditrans/app/src/main/res/drawable/icon.jpg) -->
 ## Teammates:
 
 1. Sravani Jaidi
