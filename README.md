@@ -1,5 +1,5 @@
 # App Name:Meditrans
-# App Logo: 
+<!--- # App Logo:  -->
 
 <!--- ![alt text](Meditrans/app/src/main/res/drawable/icon.jpg) -->
 ## Teammates:
