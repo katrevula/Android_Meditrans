@@ -32,7 +32,7 @@ Any device with minimum Android Sdk version API21(5.0) our application works on 
 Requires Google Play Services for Accessing Current location through Android Studio.
 
 ### Sequence Information:
-1. A registered drug store can log into the application. If it is a new drug store, it has to register by providing necessary fields (examples: Shop Name, User Id, Address, Mobile Number, Open and Closing times, Location, Delivery Availability, … ) .Drug Store can add new drugs , update the availability of existing drugs and  also view the list of the drugs that are fetched from the database we will use(firebase). 
+1. A registered drug store can log into the application. If it is a new drug store, it has to register by providing necessary fields (examples: Shop Name, User Id, Address, Mobile Number, Open and Closing times, Location, Delivery Availability, … ) .Drug Store can add new drugs , update the availability of existing drugs and  also view the list of the drugs that are fetched from the database we will be use using(firebase). 
 1. A registered drug store can also view the request that are requested by the customer. 
 1.Customer can search for stores and they will be able to see the available drugs in that particular drug stores. They could request for a drug by adding prescription and other details (Ex: Name, Mobile Number, upload Prescription, …). 
 1. If a customer searches for a particular drug, it will list out all the drug stores in which a requested drug available.
