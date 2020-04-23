@@ -107,6 +107,15 @@ public void getrequest() {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewrequest_layout, parent, false);
             return new MyViewHolder(view);
         }
+        @Override
+        public void onBindViewHolder(@NonNull final ViewRequestAdapter.MyViewHolder holder, final int position) {
+            holder.sname.setText(data.get(position).getBname());
+            holder.smobile.setText(data.get(position).getBmobile());
+            holder.sdesript.setText(data.get(position).getBrequest());
+            holder.addres.setText(data.get(position).getBaddress());
+
+
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
