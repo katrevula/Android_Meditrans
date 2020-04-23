@@ -116,6 +116,10 @@ public void getrequest() {
 
 
         }
+        @Override
+        public int getItemCount() {
+            return data.size();
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
