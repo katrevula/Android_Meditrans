@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.Bundle;
-
 import android.util.Log;
 import android.util.Patterns;
 import android.view.Menu;
@@ -14,7 +13,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ProgressBar;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -45,9 +43,8 @@ public class MedReg extends AppCompatActivity {
     private AwesomeValidation awesomeValidation;
 
     FirebaseAuth mFirebaseAuth;
-    DatabaseReference databaseReference;
+    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://meditrans-78e4b.firebaseio.com/");;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
-
 
 
     @Override
@@ -125,7 +122,10 @@ public class MedReg extends AppCompatActivity {
                                     //getting the user-id which is same as current user
                                     String user_id = mFirebaseAuth.getCurrentUser().getUid();
                                     //connecting the database reference
+//                                    databaseReference = databaseReference.child(user_id);
+
                                     databaseReference = databaseReference.child(user_id);
+
                                     SignupDetails userData = new SignupDetails(shopName, userName, password, ownerName, phone, email, shopAddress, location, time);
                                     databaseReference.setValue(userData);
                                     Toast.makeText(getApplicationContext(), "Account Created", Toast.LENGTH_SHORT).show();

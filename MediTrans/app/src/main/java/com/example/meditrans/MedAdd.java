@@ -50,6 +50,8 @@ public class MedAdd extends AppCompatActivity {
         setContentView(R.layout.activity_med_add);
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
 //        userid = sharedPreferences.getString("USER",null);
+
+
         et1=findViewById(R.id.mename);
         et2=findViewById(R.id.mecode);
         et3=findViewById(R.id.mecost);
