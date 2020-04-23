@@ -86,6 +86,13 @@ public void getrequest() {
     jobsBean1.setBaddress(emediaddres);
     jobsBean1.setBrequest(emedides);
     data.add(jobsBean1);
+
+    viewRequestAdapter = new ViewRequestAdapter(data, getApplicationContext());
+    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+    recyclerView.setLayoutManager(linearLayoutManager);
+    recyclerView.setAdapter(viewRequestAdapter);
+}
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
