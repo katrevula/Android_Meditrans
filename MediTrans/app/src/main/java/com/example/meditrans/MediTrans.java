@@ -3,6 +3,7 @@ package com.example.meditrans;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,6 +30,7 @@ public class MediTrans extends AppCompatActivity {
         b2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Log.d("error","entered");
                 Intent i = new Intent(getApplicationContext(),Customer.class);
                 startActivity(i);
             }

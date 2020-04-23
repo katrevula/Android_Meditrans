@@ -35,57 +35,51 @@ public class MedViewReq extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyviewreq);
         getrequest();
     }
-    public void getrequest() {
-        AddReqClass jobsBean1 = new AddReqClass();
-        jobsBean1.setBname("kavya");
-        jobsBean1.setBmobile("6605349686");
-        jobsBean1.setBaddress("maryville");
-        jobsBean1.setBrequest("fever");
-        data.add(jobsBean1);
-        viewRequestAdapter =new  ViewRequestAdapter(data, getApplicationContext());
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(viewRequestAdapter);
-         }
-    private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
-        List<AddReqClass> data;
-        Context applicationContext;
-
-        public ViewRequestAdapter(List<AddReqClass> data, Context applicationContext) {
-            this.applicationContext = applicationContext;
-            this.data = data;
-        }
-        @NonNull
-        @Override
-        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewrequest_layout, parent, false);
-            return new MyViewHolder(view);
-        }
-        @Override
-        public void onBindViewHolder(@NonNull final ViewRequestAdapter.MyViewHolder holder, final int position) {
-            holder.sname.setText(data.get(position).getBname());
-            holder.smobile.setText(data.get(position).getBmobile());
-            holder.sdesript.setText(data.get(position).getBrequest());
-            holder.addres.setText(data.get(position).getBaddress());
-        }
-        @Override
-        public int getItemCount() {
-            return data.size();
-
-        }
-        public class MyViewHolder extends RecyclerView.ViewHolder {
-            TextView sname, smobile, addres, sdesript;
-            ImageView scall;
-            public MyViewHolder(View itemView) {
-                super(itemView);
-                sname = itemView.findViewById(R.id.name);
-                smobile = itemView.findViewById(R.id.phnumber);
-                sdesript = itemView.findViewById(R.id.descript);
-                addres = itemView.findViewById(R.id.address);
-//                scall = itemView.findViewById(R.id.called);
-            }
-        }
-    }
+//    public void getrequest() {
+//        AddReqClass jobsBean1 = new AddReqClass();
+//        jobsBean1.setBname("kavya");
+//        jobsBean1.setBmobile("6605349686");
+//        jobsBean1.setBaddress("maryville");
+//        jobsBean1.setBrequest("fever");
+//        data.add(jobsBean1);
+//        viewRequestAdapter =new  ViewRequestAdapter(data, getApplicationContext());
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        recyclerView.setAdapter(viewRequestAdapter);
+//         }
+//    private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
+//        List<AddReqClass> data;
+//        Context applicationContext;
+//
+//        public ViewRequestAdapter(List<AddReqClass> data, Context applicationContext) {
+//            this.applicationContext = applicationContext;
+//            this.data = data;
+//        }
+//        @NonNull
+//        @Override
+//        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+//            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewrequest_layout, parent, false);
+//            return new MyViewHolder(view);
+//        }
+//        @Override
+//        public void onBindViewHolder(@NonNull final ViewRequestAdapter.MyViewHolder holder, final int position) {
+//            holder.sname.setText(data.get(position).getBname());
+//            holder.smobile.setText(data.get(position).getBmobile());
+//            holder.sdesript.setText(data.get(position).getBrequest());
+//            holder.addres.setText(data.get(position).getBaddress());
+//        }
+//        @Override
+//        public int getItemCount() {
+//            return data.size();
+//
+//        }
+public void getrequest() {
+    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+    String eid=jsonObject1.getString("id");
+    String emediname = jsonObject1.getString("name");
+    String emedimobile = jsonObject1.getString("mobile");
+    String emediaddres = jsonObject1.getString("address");
+    String emedides=jsonObject1.getString("request");
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
