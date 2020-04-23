@@ -93,6 +93,16 @@ public void getrequest() {
     recyclerView.setAdapter(viewRequestAdapter);
 }
 
+    private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
+        List<AddReqClass> data;
+        Context applicationContext;
+
+        public ViewRequestAdapter(List<AddReqClass> data, Context applicationContext) {
+            this.applicationContext = applicationContext;
+            this.data = data;
+        }
+
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
