@@ -83,11 +83,12 @@ public class Customer  extends AppCompatActivity {
     public void getfeedback() {
         //request for getting data
         data.clear();
-        Bean Bean1 = new Bean();
-        Bean1.setShopname("Walgreens");
-        Bean1.setShopaddress("Maryville");
-        Bean1.setUserid("15021");
-        data.add(Bean1);
+        String eshopname = jsonObject1.getString("shopname");
+        String eaddress = jsonObject1.getString("address");
+        String euserid = jsonObject1.getString("userid");
+
+     
+        data.add(jobsBean1);
 
         madapter = new recyclerAdapter(data, getApplicationContext());
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
