@@ -40,10 +40,12 @@ public class MedReg extends AppCompatActivity {
     Button b1;
     TextView t1;
 
+
     private AwesomeValidation awesomeValidation;
 
     FirebaseAuth mFirebaseAuth;
-    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://meditrans-78e4b.firebaseio.com/");;
+//    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://meditrans-78e4b.firebaseio.com/");;
+    DatabaseReference databaseReference;
     final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
 
@@ -124,7 +126,7 @@ public class MedReg extends AppCompatActivity {
                                     //connecting the database reference
 //                                    databaseReference = databaseReference.child(user_id);
 
-                                    databaseReference = databaseReference.child(user_id);
+                                    databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
 
                                     SignupDetails userData = new SignupDetails(shopName, userName, password, ownerName, phone, email, shopAddress, location, time);
                                     databaseReference.setValue(userData);
