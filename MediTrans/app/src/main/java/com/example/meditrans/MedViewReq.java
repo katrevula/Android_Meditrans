@@ -80,6 +80,12 @@ public void getrequest() {
     String emedimobile = jsonObject1.getString("mobile");
     String emediaddres = jsonObject1.getString("address");
     String emedides=jsonObject1.getString("request");
+    AddReqClass jobsBean1 = new AddReqClass();
+    jobsBean1.setBname(emediname);
+    jobsBean1.setBmobile(emedimobile);
+    jobsBean1.setBaddress(emediaddres);
+    jobsBean1.setBrequest(emedides);
+    data.add(jobsBean1);
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         MenuInflater inflater = getMenuInflater();
