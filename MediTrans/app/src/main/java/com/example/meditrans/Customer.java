@@ -87,7 +87,10 @@ public class Customer  extends AppCompatActivity {
         String eaddress = jsonObject1.getString("address");
         String euserid = jsonObject1.getString("userid");
 
-     
+        Bean jobsBean1 = new Bean();
+        jobsBean1.setShopname(eshopname);
+        jobsBean1.setShopaddress(eaddress);
+        jobsBean1.setUserid(euserid);
         data.add(jobsBean1);
 
         madapter = new recyclerAdapter(data, getApplicationContext());
