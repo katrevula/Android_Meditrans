@@ -120,6 +120,19 @@ public void getrequest() {
         public int getItemCount() {
             return data.size();
         }
+        public class MyViewHolder extends RecyclerView.ViewHolder {
+            TextView sname, smobile, addres, sdesript;
+            ImageView scall;
+
+            public MyViewHolder(View itemView) {
+                super(itemView);
+                sname = itemView.findViewById(R.id.name);
+                smobile = itemView.findViewById(R.id.phnumber);
+                sdesript = itemView.findViewById(R.id.descript);
+                addres = itemView.findViewById(R.id.address)
+            }
+        }
+    }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
