@@ -101,7 +101,12 @@ public void getrequest() {
             this.applicationContext = applicationContext;
             this.data = data;
         }
-
+        @NonNull
+        @Override
+        public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+            View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewrequest_layout, parent, false);
+            return new MyViewHolder(view);
+        }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
