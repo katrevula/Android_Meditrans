@@ -13,6 +13,10 @@ public class SignupDetails {
     private String time;
 //    private String doorDelivery;
 
+
+    public SignupDetails() {
+    }
+
     public SignupDetails(String shopName, String userName, String password, String ownerName, String phone, String email, String shopAddress, String location, String time) {
         this.shopName = shopName;
         this.userName = userName;

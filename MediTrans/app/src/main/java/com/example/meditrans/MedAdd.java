@@ -27,6 +27,12 @@ import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -50,6 +56,14 @@ public class MedAdd extends AppCompatActivity {
     //SharedPreferences sharedPreferences;
     String userid;
     FirebaseFirestore firebaseFirestore;
+    FirebaseAuth mFirebaseAuth;
+
+
+    // Write a message to the database
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
+    DatabaseReference myRef = database.getReference();
+
+
 
 
     @Override
@@ -59,6 +73,7 @@ public class MedAdd extends AppCompatActivity {
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
 //        userid = sharedPreferences.getString("USER",null);
 
+        String userid = mFirebaseAuth.getInstance().getCurrentUser().getEmail();
 
         et1 = findViewById(R.id.mename);
         et2 = findViewById(R.id.mecode);
@@ -101,6 +116,14 @@ public class MedAdd extends AppCompatActivity {
 
 
         });
+    }
+
+
+    public void showData(DataSnapshot dataSnapshot) {
+
+        SignupDetails userdata = new SignupDetails();
+
+
     }
 
     @Override
