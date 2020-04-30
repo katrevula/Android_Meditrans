@@ -45,7 +45,7 @@ public class Customer  extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
         editsearch = (SearchView) findViewById(R.id.search);
         recyclerView = findViewById(R.id.recycler);
-        getfeedback();
+//        getfeedback();
 
     }
 
@@ -80,24 +80,24 @@ public class Customer  extends AppCompatActivity {
         }
     }
 
-    public void getfeedback() {
-        //request for getting data
-        data.clear();
-        String eshopname = jsonObject1.getString("shopname");
-        String eaddress = jsonObject1.getString("address");
-        String euserid = jsonObject1.getString("userid");
-
-        Bean jobsBean1 = new Bean();
-        jobsBean1.setShopname(eshopname);
-        jobsBean1.setShopaddress(eaddress);
-        jobsBean1.setUserid(euserid);
-        data.add(jobsBean1);
-
-        madapter = new recyclerAdapter(data, getApplicationContext());
-        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-        recyclerView.setLayoutManager(linearLayoutManager);
-        recyclerView.setAdapter(madapter);
-    }
+//    public void getfeedback() {
+//        //request for getting data
+//        data.clear();
+//        String eshopname = jsonObject1.getString("shopname");
+//        String eaddress = jsonObject1.getString("address");
+//        String euserid = jsonObject1.getString("userid");
+//
+//        Bean jobsBean1 = new Bean();
+//        jobsBean1.setShopname(eshopname);
+//        jobsBean1.setShopaddress(eaddress);
+//        jobsBean1.setUserid(euserid);
+//        data.add(jobsBean1);
+//
+//        madapter = new recyclerAdapter(data, getApplicationContext());
+//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+//        recyclerView.setLayoutManager(linearLayoutManager);
+//        recyclerView.setAdapter(madapter);
+//    }
 
     public class recyclerAdapter extends RecyclerView.Adapter<Customer.recyclerAdapter.MyViewHolder> {
         List<Bean> horizontalList;

@@ -33,7 +33,7 @@ public class MedViewReq extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_view_req);
         recyclerView = findViewById(R.id.recyviewreq);
-        getrequest();
+//        getrequest();
     }
 //    public void getrequest() {
 //        AddReqClass jobsBean1 = new AddReqClass();
@@ -73,28 +73,28 @@ public class MedViewReq extends AppCompatActivity {
 //            return data.size();
 //
 //        }
-public void getrequest() {
-    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
-    String eid=jsonObject1.getString("id");
-    String emediname = jsonObject1.getString("name");
-    String emedimobile = jsonObject1.getString("mobile");
-    String emediaddres = jsonObject1.getString("address");
-    String emedides=jsonObject1.getString("request");
-
-
-
-    AddReqClass jobsBean1 = new AddReqClass();
-    jobsBean1.setBname(emediname);
-    jobsBean1.setBmobile(emedimobile);
-    jobsBean1.setBaddress(emediaddres);
-    jobsBean1.setBrequest(emedides);
-    data.add(jobsBean1);
-
-    viewRequestAdapter = new ViewRequestAdapter(data, getApplicationContext());
-    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
-    recyclerView.setLayoutManager(linearLayoutManager);
-    recyclerView.setAdapter(viewRequestAdapter);
-}
+//public void getrequest() {
+//    JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+//    String eid=jsonObject1.getString("id");
+//    String emediname = jsonObject1.getString("name");
+//    String emedimobile = jsonObject1.getString("mobile");
+//    String emediaddres = jsonObject1.getString("address");
+//    String emedides=jsonObject1.getString("request");
+//
+//
+//
+//    AddReqClass jobsBean1 = new AddReqClass();
+//    jobsBean1.setBname(emediname);
+//    jobsBean1.setBmobile(emedimobile);
+//    jobsBean1.setBaddress(emediaddres);
+//    jobsBean1.setBrequest(emedides);
+//    data.add(jobsBean1);
+//
+//    viewRequestAdapter = new ViewRequestAdapter(data, getApplicationContext());
+//    LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+//    recyclerView.setLayoutManager(linearLayoutManager);
+//    recyclerView.setAdapter(viewRequestAdapter);
+//}
 
     private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
         List<AddReqClass> data;
@@ -132,7 +132,7 @@ public void getrequest() {
                 sname = itemView.findViewById(R.id.name);
                 smobile = itemView.findViewById(R.id.phnumber);
                 sdesript = itemView.findViewById(R.id.descript);
-                addres = itemView.findViewById(R.id.address)
+                addres = itemView.findViewById(R.id.address);
             }
         }
     }
