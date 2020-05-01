@@ -32,6 +32,11 @@ public class MedUpdate extends AppCompatActivity {
     String userids;
     FirebaseAuth firebaseAuth;
     SignupDetails userdata;
+
+
+
+
+
 //    private AwesomeValidation awesomeValidation;
 
 //    FirebaseAuth mFirebaseAuth;
@@ -41,8 +46,12 @@ public class MedUpdate extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d("TAG", "Value is: Step 1 " );
         super.onCreate(savedInstanceState);
+        Log.d("TAG", "Value is: Step 2 " );
         setContentView(R.layout.activity_med_update);
+        Log.d("TAG", "Value is: Step 3 " );
+
 
 
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
@@ -69,6 +78,7 @@ public class MedUpdate extends AppCompatActivity {
         rb1 = findViewById(R.id.rbak);
         rb2 = findViewById(R.id.rbbl);
         b1 = findViewById(R.id.bim);
+        Log.d("TAG", "Value is: Step 4 " );
         getdetails();
 
 
@@ -137,12 +147,14 @@ public class MedUpdate extends AppCompatActivity {
 
     public void showData(DataSnapshot dataSnapshot) {
 
-
+        Log.d("TAG", "Value is: Step showData " );
 
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
             SignupDetails userdata = new SignupDetails();
+            Log.d("TAG", "Value is: Step showData for loop " );
 
             userdata = ds.child(uid).getValue(SignupDetails.class);
+            Log.d("TAG", "Value is: Step showData user data" );
             System.out.println(userdata.getShopName() + " kvkvkvkvkvkvkvkvkv");
         }
 //
@@ -162,6 +174,7 @@ public class MedUpdate extends AppCompatActivity {
     }
 
     public void getdetails() {
+        Log.d("TAG", "Value is: Step 5 " );
 //        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
 
 
@@ -175,12 +188,14 @@ public class MedUpdate extends AppCompatActivity {
 
         // Read from the database
         myRef.addValueEventListener(new ValueEventListener() {
+
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 // This method is called once with the initial value and again
                 // whenever data at this location is updated.
-
+                Log.d("TAG", "Value is: Step 6 " );
                 showData(dataSnapshot);
+                Log.d("TAG", "Value is: Step 7 " );
 //
 //                Log.d("TAG", "Value is: " + value);
             }
