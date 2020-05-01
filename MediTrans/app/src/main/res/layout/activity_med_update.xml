@@ -8,7 +8,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="15dp"
-        tools:context=".MedReg">
+        tools:context=".MedUpdate">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -26,7 +26,7 @@
 
 
             <EditText
-                android:id="@+id/sna"
+                android:id="@+id/shopname"
                 android:hint="Shop Name"
                 android:background="@drawable/cell_shape3"
                 android:layout_marginTop="20dp"
@@ -40,7 +40,7 @@
                 android:padding="6dp"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/uib"
+                android:id="@+id/userib"
                 android:hint="User Id"
                 android:background="@drawable/cell_shape3"
                 android:layout_marginTop="20dp"
@@ -53,7 +53,7 @@
                 android:padding="6dp"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/pc"
+                android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Password"
@@ -66,7 +66,7 @@
                 android:drawableStart="@drawable/ic_password"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/sond"
+                android:id="@+id/shopownername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Shop Owner Name"
@@ -79,7 +79,7 @@
                 android:drawableStart="@drawable/ic_ownername"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/mne"
+                android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Mobile Number"
@@ -92,7 +92,7 @@
                 android:drawableStart="@drawable/ic_mob"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/ef"
+                android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Email"
@@ -105,7 +105,7 @@
                 android:drawableStart="@drawable/ic_email"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/sag"
+                android:id="@+id/shopAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Shop Address"
@@ -118,7 +118,7 @@
                 android:drawableStart="@drawable/ic_address"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/lch"
+                android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Location/City"
@@ -131,7 +131,7 @@
                 android:drawableStart="@drawable/ic_city"/>
             <EditText
                 android:textColor="#009688"
-                android:id="@+id/ti"
+                android:id="@+id/time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="Time"

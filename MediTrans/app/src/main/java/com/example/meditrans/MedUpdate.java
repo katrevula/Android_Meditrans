@@ -47,23 +47,23 @@ public class MedUpdate extends AppCompatActivity {
 
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
 //        userids = sharedPreferences.getString("USER",null);
-        e1 = findViewById(R.id.sna);
+        e1 = findViewById(R.id.shopName);
         e1.setEnabled(false);
-        e2 = findViewById(R.id.uib);
+        e2 = findViewById(R.id.userib);
         e2.setEnabled(false);
-        e3 = findViewById(R.id.pc);
+        e3 = findViewById(R.id.password);
         e3.setEnabled(false);
-        e4 = findViewById(R.id.sond);
+        e4 = findViewById(R.id.shopownername);
         e4.setEnabled(false);
-        e5 = findViewById(R.id.mne);
+        e5 = findViewById(R.id.phone);
         e5.setEnabled(false);
-        e6 = findViewById(R.id.sag);
+        e6 = findViewById(R.id.email);
         e6.setEnabled(false);
-        e7 = findViewById(R.id.lch);
+        e7 = findViewById(R.id.shopAddress);
         e7.setEnabled(false);
-        e8 = findViewById(R.id.ti);
+        e8 = findViewById(R.id.city);
         e8.setEnabled(false);
-        e9 = findViewById(R.id.ef);
+        e9 = findViewById(R.id.time);
         e9.setEnabled(false);
         r1 = findViewById(R.id.rgj);
         rb1 = findViewById(R.id.rbak);
@@ -168,7 +168,7 @@ public class MedUpdate extends AppCompatActivity {
 //        String uid = firebaseAuth.getInstance().getCurrentUser().getUid();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
+        DatabaseReference myRef = database.getReference();
 
 //        databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
 

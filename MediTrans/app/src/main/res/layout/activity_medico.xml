@@ -63,7 +63,7 @@
                 android:id="@+id/uid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Email"
+                android:hint="Userid"
                 android:padding="6dp"
                 android:drawableLeft="@drawable/ic_pw"
                 android:inputType="text"
