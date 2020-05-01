@@ -31,7 +31,7 @@ public class MedUpdate extends AppCompatActivity {
     //    SharedPreferences sharedPreferences;
     String userids;
     FirebaseAuth firebaseAuth;
-    SignupDetails userdata;
+
 
 
 
@@ -144,42 +144,42 @@ public class MedUpdate extends AppCompatActivity {
     }
 
     String uid = firebaseAuth.getInstance().getCurrentUser().getUid();
-
+    SignupDetails userdata = new SignupDetails();
     public void showData(DataSnapshot dataSnapshot) {
 
         Log.d("TAG", "Value is: Step showData " );
 
         for (DataSnapshot ds : dataSnapshot.getChildren()) {
-            SignupDetails userdata = new SignupDetails();
+
             Log.d("TAG", "Value is: Step showData for loop " );
 
             userdata = ds.child(uid).getValue(SignupDetails.class);
-            e1.setText(userdata.getShopName());
-            e2.setText(userdata.getUserName());
-            e3.setText(userdata.getPassword());
-            e4.setText(userdata.getOwnerName());
-            e5.setText(userdata.getPhone());
-            e9.setText(userdata.getEmail());
-            e6.setText(userdata.getShopAddress());
-            e7.setText(userdata.getLocation());
-            e8.setText(userdata.getTime());
 
-            e9.setText(userdata.getUserName());
             Log.d("TAG", "Value is: Step showData user data" );
             System.out.println(userdata.getShopName() + " kvkvkvkvkvkvkvkvkv");
         }
-//
-//        e1.setText(userdata.getShopName());
-//        e2.setText(userdata.getUserName());
-//        e3.setText(userdata.getPassword());
-//        e4.setText(userdata.getOwnerName());
-//        e5.setText(userdata.getPhone());
-//        e9.setText(userdata.getEmail());
-//        e6.setText(userdata.getShopAddress());
-//        e7.setText(userdata.getLocation());
-//        e8.setText(userdata.getTime());
-//
-//        e9.setText(userdata.getUserName());
+
+
+
+                        String mshopname = userdata.getShopName();
+                        String muserid = userdata.getUserName();
+                        String mpass=userdata.getPassword();
+                        String mowner=userdata.getOwnerName();
+                        String mmobile=userdata.getPhone();
+                        String memail=userdata.getEmail();
+                        String maddress=userdata.getShopAddress();
+                        String mcity=userdata.getLocation();
+                        String mtiming=userdata.getTime();
+                        String mdoordel="";
+                        e1.setText(mshopname);
+                        e2.setText(muserid);
+                        e3.setText(mpass);
+                        e4.setText(mowner);
+                        e5.setText(mmobile);
+                        e9.setText(memail);
+                        e6.setText(maddress);
+                        e7.setText(mcity);
+                        e8.setText(mtiming);
 
 
     }
