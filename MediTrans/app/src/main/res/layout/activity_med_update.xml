@@ -25,123 +25,131 @@
                 android:layout_gravity="center"/>
 
 
-            <EditText
+            <TextView
                 android:id="@+id/shopname"
-                android:hint="Shop Name"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:drawableLeft="@drawable/ic_shopname"
-                android:inputType="text"
-                android:textColor="#009688"
-                android:textAlignment="center"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
                 android:drawableStart="@drawable/ic_shopname"
-                android:padding="6dp"/>
-            <EditText
-                android:textColor="#009688"
-                android:id="@+id/userib"
-                android:hint="User Id"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
+                android:drawableLeft="@drawable/ic_shopname"
+                android:hint="Shop Name"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
+                android:id="@+id/userid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="text"
-                android:textAlignment="center"
-                android:drawableLeft="@drawable/ic_userid"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
                 android:drawableStart="@drawable/ic_userid"
-                android:padding="6dp"/>
-            <EditText
-                android:textColor="#009688"
+                android:drawableLeft="@drawable/ic_userid"
+                android:hint="User Id"
+                android:inputType="text"
+                android:padding="6dp"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Password"
-                android:background="@drawable/cell_shape3"
                 android:layout_marginTop="20dp"
-                android:textAlignment="center"
-                android:padding="6dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_password"
                 android:drawableLeft="@drawable/ic_password"
+                android:hint="Password"
                 android:inputType="textPassword"
-                android:drawableStart="@drawable/ic_password"/>
-            <EditText
-                android:textColor="#009688"
+                android:padding="6dp"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/shopownername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_ownername"
+                android:drawableLeft="@drawable/ic_ownername"
                 android:hint="Shop Owner Name"
                 android:inputType="text"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableLeft="@drawable/ic_ownername"
-                android:drawableStart="@drawable/ic_ownername"/>
-            <EditText
-                android:textColor="#009688"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/phone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_mob"
+                android:drawableLeft="@drawable/ic_mob"
                 android:hint="Mobile Number"
                 android:inputType="number"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableLeft="@drawable/ic_mob"
-                android:drawableStart="@drawable/ic_mob"/>
-            <EditText
-                android:textColor="#009688"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_email"
+                android:drawableLeft="@drawable/ic_email"
                 android:hint="Email"
                 android:inputType="text"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableLeft="@drawable/ic_email"
-                android:drawableStart="@drawable/ic_email"/>
-            <EditText
-                android:textColor="#009688"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/shopAddress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_address"
+                android:drawableLeft="@drawable/ic_address"
                 android:hint="Shop Address"
                 android:inputType="text"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableLeft="@drawable/ic_address"
-                android:drawableStart="@drawable/ic_address"/>
-            <EditText
-                android:textColor="#009688"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/city"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_city"
+                android:drawableLeft="@drawable/ic_city"
                 android:hint="Location/City"
                 android:inputType="text"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableLeft="@drawable/ic_city"
-                android:drawableStart="@drawable/ic_city"/>
-            <EditText
-                android:textColor="#009688"
+                android:textAlignment="center"
+                android:textColor="#009688" />
+
+            <TextView
                 android:id="@+id/time"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/cell_shape3"
+                android:drawableStart="@drawable/ic_clock"
+                android:drawableLeft="@drawable/ic_clock"
                 android:hint="Time"
                 android:inputType="text"
-                android:drawableLeft="@drawable/ic_clock"
-                android:background="@drawable/cell_shape3"
-                android:layout_marginTop="20dp"
-                android:textAlignment="center"
                 android:padding="6dp"
-                android:drawableStart="@drawable/ic_clock" />
+                android:textAlignment="center"
+                android:textColor="#009688" />
 
             <LinearLayout
                 android:layout_width="match_parent"
