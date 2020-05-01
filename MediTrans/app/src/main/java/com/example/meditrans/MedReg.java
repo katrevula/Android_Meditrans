@@ -114,10 +114,10 @@ public class MedReg extends AppCompatActivity {
                                     String password = e3.getText().toString();
                                     String ownerName = e4.getText().toString();
                                     String phone = e5.getText().toString();
-                                    String email = e6.getText().toString();
-                                    String shopAddress = e7.getText().toString();
-                                    String location = e8.getText().toString();
-                                    String time = e9.getText().toString();
+                                    String email = e9.getText().toString();
+                                    String shopAddress = e6.getText().toString();
+                                    String location = e7.getText().toString();
+                                    String time = e8.getText().toString();
                                     String doorDelivery = e2.getText().toString();
 
 
