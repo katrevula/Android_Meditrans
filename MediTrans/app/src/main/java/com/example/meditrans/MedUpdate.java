@@ -32,14 +32,7 @@ public class MedUpdate extends AppCompatActivity {
 
     FirebaseAuth firebaseAuth;
 
-
-
-
-
-
-
-
-//    private AwesomeValidation awesomeValidation;
+    //    private AwesomeValidation awesomeValidation;
 
 //    FirebaseAuth mFirebaseAuth;
 //    //    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://meditrans-78e4b.firebaseio.com/");;
