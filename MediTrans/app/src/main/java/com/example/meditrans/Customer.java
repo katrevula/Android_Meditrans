@@ -23,6 +23,13 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,16 +44,17 @@ public class Customer  extends AppCompatActivity {
     List<Bean> data = new ArrayList<>();
     SearchView editsearch;
     SharedPreferences sharedPreferences;
+    FirebaseAuth firebaseAuth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
         Log.d("TAG", "Value is: Step onCreate" );
-//        progressBar = findViewById(R.id.progress);
+        progressBar = findViewById(R.id.progress);
 //        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
-//        editsearch = (SearchView) findViewById(R.id.search);
-//        recyclerView = findViewById(R.id.recycler);
+        editsearch = (SearchView) findViewById(R.id.search);
+        recyclerView = findViewById(R.id.recycler);
 //        getfeedback();
 
     }
@@ -172,6 +180,77 @@ public class Customer  extends AppCompatActivity {
                 cv=view.findViewById(R.id.card);
 
             }
+        }
+
+
+
+        public void getdetails() {
+            Log.d("TAG", "Value is: Step 5 " );
+
+
+            FirebaseDatabase database = FirebaseDatabase.getInstance();
+            DatabaseReference myRef = database.getReference();
+
+            myRef.addValueEventListener(new ValueEventListener() {
+
+                @Override
+                public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    showData(dataSnapshot);
+
+
+                }
+
+                @Override
+                public void onCancelled(DatabaseError error) {
+
+                    Log.w("TAG", "Failed to read value.", error.toException());
+                }
+            });
+
+
+
+        }
+
+        String uid = firebaseAuth.getInstance().getCurrentUser().getUid();
+        SignupDetails userdata = new SignupDetails();
+        public void showData(DataSnapshot dataSnapshot) {
+
+            Log.d("TAG", "Value is: Step showData " );
+
+            for (DataSnapshot ds : dataSnapshot.getChildren()) {
+
+                Log.d("TAG", "Value is: Step showData for loop " );
+
+                userdata = ds.child(uid).getValue(SignupDetails.class);
+
+                Log.d("TAG", "Value is: Step showData user data" );
+                System.out.println(userdata.getShopName() + " kvkvkvkvkvkvkvkvkv");
+            }
+
+
+
+            String mshopname = userdata.getShopName();
+            String muserid = userdata.getUserName();
+            String mpass=userdata.getPassword();
+            String mowner=userdata.getOwnerName();
+            String mmobile=userdata.getPhone();
+            String memail=userdata.getEmail();
+            String maddress=userdata.getShopAddress();
+            String mcity=userdata.getLocation();
+            String mtiming=userdata.getTime();
+            String mdoordel="";
+//            e1.setText(mshopname);
+//            e2.setText(muserid);
+//            e3.setText(mpass);
+//            e4.setText(mowner);
+//            e5.setText(mmobile);
+//            e9.setText(memail);
+//            e6.setText(maddress);
+//            e7.setText(mcity);
+//            e8.setText(mtiming);
+
+
         }
     }
 }

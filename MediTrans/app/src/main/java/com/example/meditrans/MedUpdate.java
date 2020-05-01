@@ -29,8 +29,10 @@ public class MedUpdate extends AppCompatActivity {
     RadioButton rb1, rb2;
     Button b1;
     //    SharedPreferences sharedPreferences;
-    String userids;
+
     FirebaseAuth firebaseAuth;
+
+
 
 
 
