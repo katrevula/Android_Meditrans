@@ -36,7 +36,7 @@ Requires Google Play Services for Accessing Current location through Android Stu
 1. A registered drug store can also view the request that are requested by the customer. 
 1.Customer can search for stores and they will be able to see the available drugs in that particular drug stores. They could request for a drug by adding prescription and other details (Ex: Name, Mobile Number, upload Prescription, …). 
 1. If a customer searches for a particular drug, it will list out all the drug stores in which a requested drug available.
-1. Drug store will be able to see the requests from customers. After reviewing the prescriptions, drugs will be delivered(if delivery is available for particular store)  after confirming it on a call by pressing a “call” button which redirects to placing a call (using drug store contact used while registration) to that particular customer .
+1. Drug store will be able to see the requests from customers. After reviewing the prescriptions, drugs will be delivered to the adress given by that particular customer.
 1. There is an about us button where we can view details about the meditrans application, There is a Home button where we can go back to login page(Home page) irrespective of what page we are in.There is a contact us button where we can get in touch( with contact details) with the developers of the application .
 
 
