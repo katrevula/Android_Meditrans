@@ -1,9 +1,8 @@
 package com.example.meditrans;
 
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -15,6 +14,13 @@ import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
 
 public class MedUpdate extends AppCompatActivity {
 
@@ -22,17 +28,25 @@ public class MedUpdate extends AppCompatActivity {
     RadioGroup r1;
     RadioButton rb1, rb2;
     Button b1;
-    SharedPreferences sharedPreferences;
+    //    SharedPreferences sharedPreferences;
     String userids;
-   // private AwesomeValidation awesomeValidation;
+    FirebaseAuth firebaseAuth;
+    SignupDetails userdata;
+//    private AwesomeValidation awesomeValidation;
+
+//    FirebaseAuth mFirebaseAuth;
+//    //    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReferenceFromUrl("https://meditrans-78e4b.firebaseio.com/");;
+//    DatabaseReference databaseReference;
+//    final FirebaseDatabase database = FirebaseDatabase.getInstance();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_update);
 
-        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
-        userids = sharedPreferences.getString("USER",null);
+
+//        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
+//        userids = sharedPreferences.getString("USER",null);
         e1 = findViewById(R.id.sna);
         e1.setEnabled(false);
         e2 = findViewById(R.id.uib);
@@ -55,6 +69,7 @@ public class MedUpdate extends AppCompatActivity {
         rb1 = findViewById(R.id.rbak);
         rb2 = findViewById(R.id.rbbl);
         b1 = findViewById(R.id.bim);
+        getdetails();
 
 
 //        awesomeValidation=new AwesomeValidation(ValidationStyle.BASIC);
@@ -102,19 +117,147 @@ public class MedUpdate extends AppCompatActivity {
                 return true;
 
             case R.id.shome:
-                Intent i =new Intent(getApplicationContext(),MediTrans.class);
+                Intent i = new Intent(getApplicationContext(), MediTrans.class);
                 startActivity(i);
                 return true;
             case R.id.about:
-                i =new Intent(getApplicationContext(),AboutActivity.class);
+                i = new Intent(getApplicationContext(), AboutActivity.class);
                 startActivity(i);
                 return true;
             case R.id.contact:
-                i =new Intent(getApplicationContext(),ContactActivity.class);
+                i = new Intent(getApplicationContext(), ContactActivity.class);
                 startActivity(i);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
         }
+    }
+
+    String uid = firebaseAuth.getInstance().getCurrentUser().getUid();
+
+    public void showData(DataSnapshot dataSnapshot) {
+
+
+
+        for (DataSnapshot ds : dataSnapshot.getChildren()) {
+            SignupDetails userdata = new SignupDetails();
+
+            userdata = ds.child(uid).getValue(SignupDetails.class);
+            System.out.println(userdata.getShopName() + " kvkvkvkvkvkvkvkvkv");
+        }
+//
+//        e1.setText(userdata.getShopName());
+//        e2.setText(userdata.getUserName());
+//        e3.setText(userdata.getPassword());
+//        e4.setText(userdata.getOwnerName());
+//        e5.setText(userdata.getPhone());
+//        e9.setText(userdata.getEmail());
+//        e6.setText(userdata.getShopAddress());
+//        e7.setText(userdata.getLocation());
+//        e8.setText(userdata.getTime());
+//
+//        e9.setText(userdata.getUserName());
+
+
+    }
+
+    public void getdetails() {
+//        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+
+
+//        String uid = firebaseAuth.getInstance().getCurrentUser().getUid();
+
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+//        databaseReference = FirebaseDatabase.getInstance().getReference().child("userdata").child(user_id);
+
+
+        // Read from the database
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                // This method is called once with the initial value and again
+                // whenever data at this location is updated.
+
+                showData(dataSnapshot);
+//
+//                Log.d("TAG", "Value is: " + value);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError error) {
+                // Failed to read value
+                Log.w("TAG", "Failed to read value.", error.toException());
+            }
+        });
+
+
+//        String serverurl = API.getmedico;
+//        StringRequest stringRequest = new StringRequest(Request.Method.POST, serverurl, new Response.Listener<String>() {
+//            @Override
+//            public void onResponse(String response) {
+////                progressBar.setVisibility(View.GONE);
+//
+//                try {
+//                    JSONObject jsonObject = new JSONObject(response);
+//                    JSONArray jsonArray = jsonObject.getJSONArray("medicine");
+//
+//                    for (int i = 0; i < jsonArray.length(); i++) {
+//
+//                        JSONObject jsonObject1 = jsonArray.getJSONObject(i);
+////                        String eid=jsonObject1.getString("id");
+//                        String mshopname = jsonObject1.getString("shopname");
+//                        String muserid = jsonObject1.getString("userid");
+//                        String mpass=jsonObject1.getString("password");
+//                        String mowner=jsonObject1.getString("ownername");
+//                        String mmobile=jsonObject1.getString("mobile");
+//                        String memail=jsonObject1.getString("email");
+//                        String maddress=jsonObject1.getString("address");
+//                        String mcity=jsonObject1.getString("city");
+//                        String mtiming=jsonObject1.getString("timing");
+//                        String mdoordel=jsonObject1.getString("doordelivery");
+//                        e1.setText(mshopname);
+//                        e2.setText(muserid);
+//                        e3.setText(mpass);
+//                        e4.setText(mowner);
+//                        e5.setText(mmobile);
+//                        e9.setText(memail);
+//                        e6.setText(maddress);
+//                        e7.setText(mcity);
+//                        e8.setText(mtiming);
+//
+//                    }
+//                } catch (JSONException e) {
+//                    e.printStackTrace();
+//                }
+//
+//            }
+//        }, new Response.ErrorListener() {
+//
+//            @Override
+//            public void onErrorResponse(VolleyError error) {
+////                progressBar.setVisibility(View.GONE);
+//                VolleyLog.d("Main", "Error: " + error.getMessage());
+//                Log.d("Main", "" + error.getMessage() + "," + error.toString());
+//
+//
+//            }
+//        }) {
+//            @Override
+//            public Map<String, String> getParams() {
+////                Toast.makeText(getApplicationContext(), "success", Toast.LENGTH_SHORT).show();
+//                Map<String,String> data= new HashMap<String, String>();//to bind group of data
+//                //to insert data from edit feilds into table feilds
+//                data.put("userid",userids);
+//
+//                return data;
+//            }
+//
+//        };
+////        progressBar.setVisibility(View.VISIBLE);
+//        VolleySingleton.getInstance(this).addToRequestQueue(stringRequest);
+//        queue.add(stringRequest);
+
     }
 }
