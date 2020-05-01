@@ -57,23 +57,23 @@ public class MedUpdate extends AppCompatActivity {
 //        sharedPreferences = getSharedPreferences("pref",MODE_PRIVATE);
 //        userids = sharedPreferences.getString("USER",null);
         e1 = findViewById(R.id.shopName);
-        e1.setEnabled(false);
+//        e1.setEnabled(false);
         e2 = findViewById(R.id.userib);
-        e2.setEnabled(false);
+//        e2.setEnabled(false);
         e3 = findViewById(R.id.password);
-        e3.setEnabled(false);
+//        e3.setEnabled(false);
         e4 = findViewById(R.id.shopownername);
-        e4.setEnabled(false);
+//        e4.setEnabled(false);
         e5 = findViewById(R.id.phone);
-        e5.setEnabled(false);
+//        e5.setEnabled(false);
         e6 = findViewById(R.id.email);
-        e6.setEnabled(false);
+//        e6.setEnabled(false);
         e7 = findViewById(R.id.shopAddress);
-        e7.setEnabled(false);
+//        e7.setEnabled(false);
         e8 = findViewById(R.id.city);
-        e8.setEnabled(false);
+//        e8.setEnabled(false);
         e9 = findViewById(R.id.time);
-        e9.setEnabled(false);
+//        e9.setEnabled(false);
         r1 = findViewById(R.id.rgj);
         rb1 = findViewById(R.id.rbak);
         rb2 = findViewById(R.id.rbbl);
@@ -154,6 +154,17 @@ public class MedUpdate extends AppCompatActivity {
             Log.d("TAG", "Value is: Step showData for loop " );
 
             userdata = ds.child(uid).getValue(SignupDetails.class);
+            e1.setText(userdata.getShopName());
+            e2.setText(userdata.getUserName());
+            e3.setText(userdata.getPassword());
+            e4.setText(userdata.getOwnerName());
+            e5.setText(userdata.getPhone());
+            e9.setText(userdata.getEmail());
+            e6.setText(userdata.getShopAddress());
+            e7.setText(userdata.getLocation());
+            e8.setText(userdata.getTime());
+
+            e9.setText(userdata.getUserName());
             Log.d("TAG", "Value is: Step showData user data" );
             System.out.println(userdata.getShopName() + " kvkvkvkvkvkvkvkvkv");
         }
