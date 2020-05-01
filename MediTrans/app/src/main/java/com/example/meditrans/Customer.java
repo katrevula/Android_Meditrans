@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -41,10 +42,11 @@ public class Customer  extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer);
-        progressBar = findViewById(R.id.progress);
-        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
-        editsearch = (SearchView) findViewById(R.id.search);
-        recyclerView = findViewById(R.id.recycler);
+        Log.d("TAG", "Value is: Step onCreate" );
+//        progressBar = findViewById(R.id.progress);
+//        sharedPreferences = getSharedPreferences("pref", MODE_PRIVATE);
+//        editsearch = (SearchView) findViewById(R.id.search);
+//        recyclerView = findViewById(R.id.recycler);
 //        getfeedback();
 
     }
