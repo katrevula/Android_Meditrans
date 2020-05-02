@@ -35,7 +35,7 @@ public class MedViewMed extends AppCompatActivity {
         tv2 = new TextView(getApplicationContext());
         tv3 = new TextView(getApplicationContext());
         tv4 = new TextView(getApplicationContext());
-        tv0.setText("f109");
+        tv0.setText("1");
         tv0.setTextColor(Color.BLACK);
         tv0.setPadding(5, 5, 5, 5);
         tv0.setBackgroundColor(R.drawable.cell_shape3);
