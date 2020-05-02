@@ -32,6 +32,7 @@ public class MediTrans extends AppCompatActivity {
             public void onClick(View v) {
                 Log.d("error","entered");
                 Intent i = new Intent(getApplicationContext(),CustRecyler.class);
+//                Intent i = new Intent(getApplicationContext(),MedicineDataActivity.class);
                 startActivity(i);
             }
         });

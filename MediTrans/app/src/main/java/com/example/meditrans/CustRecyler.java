@@ -1,18 +1,15 @@
 package com.example.meditrans;
 
-import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBar;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -20,8 +17,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -44,7 +39,7 @@ public class CustRecyler extends AppCompatActivity {
         mFirebaseAuth = FirebaseAuth.getInstance();
         recyclerView.setLayoutManager(layoutManager);
         CharSequence mTitle = getTitle();
-        mTitle = "Cart";
+        mTitle = "Pharmacies";
         ActionBar actionBar = getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
         actionBar.setDisplayShowTitleEnabled(true);
@@ -70,10 +65,10 @@ public class CustRecyler extends AppCompatActivity {
                 .setQuery(cartListRef
                         , SignupDetails.class).build();
 
-        FirebaseRecyclerAdapter<SignupDetails, ViewHolder> adapter =
-                new FirebaseRecyclerAdapter<SignupDetails, ViewHolder>(options) {
+        FirebaseRecyclerAdapter<SignupDetails, CusViewHolder> adapter =
+                new FirebaseRecyclerAdapter<SignupDetails, CusViewHolder>(options) {
                     @Override
-                    protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull final SignupDetails model) {
+                    protected void onBindViewHolder(@NonNull final CusViewHolder holder, final int position, @NonNull final SignupDetails model) {
 //                        holder.owner.setText(model.getOwnerName());
 //                        holder.email.setText(model.getEmail());
 //                        holder.uname.setText(model.getUserName());
@@ -81,15 +76,42 @@ public class CustRecyler extends AppCompatActivity {
 //                        holder.phone.setText(model.getPhone());
                         holder.location.setText(model.getLocation());
                         holder.name.setText(model.getShopName());
+
 //                        holder.time.setText(model.getTime());
+
+
+
+
+                        holder.cardView.setOnClickListener(new View.OnClickListener() {
+                            @Override
+                            public void onClick(View v) {
+
+//                                int shopPosition = holder.getPosition();
+                                String shopnamesinholder = model.getEmail();
+
+                                
+
+                                
+//                                String shops = horizontalList.get(position).getUserid();
+//                                SharedPreferences.Editor editor = sharedPreferences.edit();
+//                                editor.putString("SHOP", shops);
+//                                editor.commit();
+                                
+                                Intent intent = new Intent(getApplicationContext(), MedicineDataActivity.class);
+                                intent.p
+                                startActivity(intent);
+                            }
+                        });
+
+
 
                     }
 
                     @NonNull
                     @Override
-                    public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                    public CusViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
                         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.customermodel, parent, false);
-                        ViewHolder holder = new ViewHolder(view);
+                        CusViewHolder holder = new CusViewHolder(view);
                         return holder;
                     }
                 };

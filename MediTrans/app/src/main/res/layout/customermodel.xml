@@ -9,7 +9,8 @@
     app:cardCornerRadius="15dp"
     app:cardElevation="10dp"
     app:cardBackgroundColor="#26A69A"
-    android:layout_margin="10dp">
+    android:layout_margin="10dp"
+    android:id="@+id/cardCustomerRecyler">
 
 <!--    app:cardElevation="15dp"-->
 

@@ -12,6 +12,7 @@
 <!--        <activity android:name=".MediTrans" />-->
         <activity android:name=".Medico" />
         <activity android:name=".CustRecyler"/>
+        <activity android:name=".MedicineDataActivity"/>
 
         <activity android:name=".MedHome" />
         <activity android:name=".MedReg" />

@@ -4,15 +4,18 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class ViewHolder extends RecyclerView.ViewHolder {
+public class CusViewHolder extends RecyclerView.ViewHolder {
 
     public TextView email, location,owner,phone,addr,name,time,uname;
 
+    public CardView cardView;
 
-    public ViewHolder(View itemView) {
+
+    public CusViewHolder(View itemView) {
         super(itemView);
 
 //        email = itemView.findViewById(R.id.emailmodel);
@@ -28,6 +31,7 @@ public class ViewHolder extends RecyclerView.ViewHolder {
 
         location = itemView.findViewById(R.id.location);
         name = itemView.findViewById(R.id.shopName);
+        cardView = itemView.findViewById(R.id.cardCustomerRecyler);
 
 
 

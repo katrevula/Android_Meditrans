@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="#E0E0E0"
+    tools:context=".MedicineDataActivity">
+
+    <ProgressBar
+        android:id="@+id/progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/searchView"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <SearchView
+        android:background="#fff"
+        android:id="@+id/searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:queryHint="Search Here"
+        android:iconifiedByDefault="false">
+
+    </SearchView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/medicineDataRecycler"
+        android:layout_width="match_parent"
+        android:layout_height="629dp"
+        app:layout_anchor="@+id/relativeLayout"
+        app:layout_anchorGravity="center" />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+
+        android:background="@drawable/cell_shape2"
+        android:gravity="center_horizontal">
+
+        <Button
+            android:id="@+id/addrequest"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@android:drawable/screen_background_light_transparent"
+            android:padding="10dp"
+            android:text="Add Request" />
+    </RelativeLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+
