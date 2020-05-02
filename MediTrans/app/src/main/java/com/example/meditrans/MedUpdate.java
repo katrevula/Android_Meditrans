@@ -64,6 +64,7 @@ public class MedUpdate extends AppCompatActivity {
                 String address = dataSnapshot.child("shopAddress").getValue().toString();
                 String time = dataSnapshot.child("time").getValue().toString();
                 shpnnme.setText(shopName);
+                Log.d("hhhhhh","hhhhhh" +shopName);
                 usrid.setText(userID);
                 psswrd.setText(password);
                 ownrname.setText(shopOwner);
