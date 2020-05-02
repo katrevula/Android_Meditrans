@@ -98,7 +98,7 @@ public class CustRecyler extends AppCompatActivity {
 //                                editor.commit();
                                 
                                 Intent intent = new Intent(getApplicationContext(), MedicineDataActivity.class);
-                                intent.p
+                                intent.putExtra("shopnamesEmail" ,shopnamesinholder) ;
                                 startActivity(intent);
                             }
                         });
