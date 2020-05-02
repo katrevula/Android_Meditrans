@@ -13,7 +13,6 @@
         <activity android:name=".Medico" />
         <activity android:name=".CustRecyler"/>
 
-        <activity android:name=".Customer" />
         <activity android:name=".MedHome" />
         <activity android:name=".MedReg" />
         <activity android:name=".MedViewMed" />

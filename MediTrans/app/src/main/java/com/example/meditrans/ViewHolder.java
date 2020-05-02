@@ -15,15 +15,20 @@ public class ViewHolder extends RecyclerView.ViewHolder {
     public ViewHolder(View itemView) {
         super(itemView);
 
-        email = itemView.findViewById(R.id.emailmodel);
-        location = itemView.findViewById(R.id.locationmodel);
-        owner = itemView.findViewById(R.id.ownermodel);
-        phone = itemView.findViewById(R.id.phonemodel);
-        addr = itemView.findViewById(R.id.addrmodel);
-        uname = itemView.findViewById(R.id.unamemodel);
+//        email = itemView.findViewById(R.id.emailmodel);
+//        location = itemView.findViewById(R.id.locationmodel);
+//        owner = itemView.findViewById(R.id.ownermodel);
+//        phone = itemView.findViewById(R.id.phonemodel);
+//        addr = itemView.findViewById(R.id.addrmodel);
+//        uname = itemView.findViewById(R.id.unamemodel);
+//
+//        name = itemView.findViewById(R.id.namemodel);
+//        time = itemView.findViewById(R.id.timemodel);
 
-        name = itemView.findViewById(R.id.namemodel);
-        time = itemView.findViewById(R.id.timemodel);
+
+        location = itemView.findViewById(R.id.location);
+        name = itemView.findViewById(R.id.shopName);
+
 
 
     }

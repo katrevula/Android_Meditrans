@@ -109,7 +109,7 @@ public class Customer  extends AppCompatActivity {
 //        recyclerView.setAdapter(madapter);
 //    }
 
-    public class recyclerAdapter extends RecyclerView.Adapter<Customer.recyclerAdapter.MyViewHolder> {
+    public class recyclerAdapter extends RecyclerView.Adapter<recyclerAdapter.MyViewHolder> {
         List<Bean> horizontalList;
         Context context;
 

@@ -60,10 +60,10 @@ public class CustRecyler extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-        user_id = mFirebaseAuth.getCurrentUser().getUid();
-//        user_id =  "ylRI8cFLJ3UpRWYaX0zVTOkAeYD2";
+//        user_id = mFirebaseAuth.getCurrentUser().getUid();
+        user_id =  "ylRI8cFLJ3UpRWYaX0zVTOkAeYD2";
 
-        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("userdetails");
+        final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("userdata");
 
 
         FirebaseRecyclerOptions<SignupDetails> options = new FirebaseRecyclerOptions.Builder<SignupDetails>()
@@ -74,14 +74,14 @@ public class CustRecyler extends AppCompatActivity {
                 new FirebaseRecyclerAdapter<SignupDetails, ViewHolder>(options) {
                     @Override
                     protected void onBindViewHolder(@NonNull ViewHolder holder, int position, @NonNull final SignupDetails model) {
-                        holder.owner.setText(model.getOwnerName());
-                        holder.email.setText(model.getEmail());
-                        holder.uname.setText(model.getUserName());
-                        holder.addr.setText(model.getShopAddress());
-                        holder.phone.setText(model.getPhone());
+//                        holder.owner.setText(model.getOwnerName());
+//                        holder.email.setText(model.getEmail());
+//                        holder.uname.setText(model.getUserName());
+//                        holder.addr.setText(model.getShopAddress());
+//                        holder.phone.setText(model.getPhone());
                         holder.location.setText(model.getLocation());
-                        holder.name.setText(model.getOwnerName());
-                        holder.time.setText(model.getTime());
+                        holder.name.setText(model.getShopName());
+//                        holder.time.setText(model.getTime());
 
                     }
 

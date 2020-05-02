@@ -131,9 +131,9 @@ public class MedicineDetails extends AppCompatActivity {
 
             MyViewHolder(View view) {
                 super(view);
-                st5 = view.findViewById(R.id.t4);
-                st6 = view.findViewById(R.id.t5);
-                st7 = view.findViewById(R.id.t6);
+                st5 = view.findViewById(R.id.medicineName);
+                st6 = view.findViewById(R.id.medicineCost);
+                st7 = view.findViewById(R.id.medicineDescription);
             }
         }
     }
