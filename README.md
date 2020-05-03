@@ -25,7 +25,7 @@ UserID: walmart@walmart.com
 
 Password: 123123
 ### Apk file: 
-Attached file is at Meditrans/app-debug.apk
+Attached file is at: https://github.com/katrevula/Android_Meditrans/blob/master/app-debug.apk
 ### Supported Devices:
 Any device with minimum Android Sdk version API21(5.0) our application works on that device.
 
