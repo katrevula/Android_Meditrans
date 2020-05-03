@@ -3,6 +3,7 @@ package com.example.meditrans;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -30,6 +31,8 @@ public class MedicineDataActivity extends AppCompatActivity {
     MedicineDataAdapter medicineDataAdapter;
     public String shopnamesEmail;
 
+    Button addrequest ;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,11 +48,14 @@ public class MedicineDataActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         shopnamesEmail = intent.getStringExtra("shopnamesEmail");
-//        startActivity(intent);
+
         retrieveData();
+
+
+
+
     }
 
-    ArrayList<MedicineData> medicineDataList11 = new ArrayList<>();
 
     private void retrieveData() {
         firebaseFireStore.collection("Medicines").get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -59,14 +65,10 @@ public class MedicineDataActivity extends AppCompatActivity {
 
                 for (DocumentSnapshot medInformation : task.getResult()) {
                     medicineDataList.add(new MedicineData(medInformation.getString("name"), medInformation.getString("code"), medInformation.getString("cost"), medInformation.getString("shopname"), medInformation.getString("description"), medInformation.getString("avaliable")));
-
                 }
-
                 for (MedicineData data : medicineDataList) {
-
                     if (data.getShopname().equals(shopnamesEmail))
                         shopnamesEmailList.add(data);
-
                 }
 
                 medicineDataAdapter = new MedicineDataAdapter(MedicineDataActivity.this, shopnamesEmailList);
@@ -83,12 +85,19 @@ public class MedicineDataActivity extends AppCompatActivity {
         });
     }
 
-    public void addRequest(View view){
+    public void addRequest() {
 
+        addrequest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
 
-        Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
-        intent.putExtra("shopnamesEmail" ,shopnamesEmail) ;
-        startActivity(intent);
+                Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
+                intent.putExtra("shopnamesEmail", shopnamesEmail);
+                startActivity(intent);
+
+            }
+        });
+
 
     }
 

@@ -154,6 +154,9 @@ public class MedReg extends AppCompatActivity {
 
             }
         });
+
+
+
     }
 
     @Override
