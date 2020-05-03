@@ -86,7 +86,9 @@ public class MedicineDataActivity extends AppCompatActivity {
     public void addRequest(View view){
 
 
-
+        Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
+        intent.putExtra("shopnamesEmail" ,shopnamesEmail) ;
+        startActivity(intent);
 
     }
 
