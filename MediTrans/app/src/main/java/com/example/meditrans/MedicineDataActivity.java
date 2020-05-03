@@ -51,6 +51,14 @@ public class MedicineDataActivity extends AppCompatActivity {
 
         retrieveData();
 
+//        addrequest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent intent = new Intent(getApplicationContext(), MedReg.class);
+//                startActivity(intent);
+//            }
+//        });
+
 
 
 
