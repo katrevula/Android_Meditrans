@@ -56,7 +56,7 @@ public class CustRecyler extends AppCompatActivity {
         super.onStart();
 
 //        user_id = mFirebaseAuth.getCurrentUser().getUid();
-        user_id =  "ylRI8cFLJ3UpRWYaX0zVTOkAeYD2";
+//        user_id =  "ylRI8cFLJ3UpRWYaX0zVTOkAeYD2";
 
         final DatabaseReference cartListRef = FirebaseDatabase.getInstance().getReference().child("userdata");
 
@@ -89,14 +89,14 @@ public class CustRecyler extends AppCompatActivity {
 //                                int shopPosition = holder.getPosition();
                                 String shopnamesinholder = model.getEmail();
 
-                                
 
-                                
+
+
 //                                String shops = horizontalList.get(position).getUserid();
 //                                SharedPreferences.Editor editor = sharedPreferences.edit();
 //                                editor.putString("SHOP", shops);
 //                                editor.commit();
-                                
+
                                 Intent intent = new Intent(getApplicationContext(), MedicineDataActivity.class);
                                 intent.putExtra("shopnamesEmail" ,shopnamesinholder) ;
                                 startActivity(intent);

@@ -59,15 +59,15 @@
             android:layout_marginTop="25dp">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:backgroundTint="#29B6F6"
                 android:id="@+id/uid"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Userid"
-                android:padding="6dp"
-                android:drawableLeft="@drawable/ic_pw"
-                android:inputType="text"
+                android:backgroundTint="#29B6F6"
                 android:drawableStart="@drawable/ic_pw"
+                android:drawableLeft="@drawable/ic_pw"
+                android:hint="Email"
+                android:inputType="text"
+                android:padding="6dp"
                 tools:targetApi="lollipop" />
         </com.google.android.material.textfield.TextInputLayout>
         <com.google.android.material.textfield.TextInputLayout

@@ -4,12 +4,12 @@ import android.widget.TextView;
 
 public class MedicineData {
 
-    String medName;
-    String medCode;
-    String medCost;
-    String medShopname;
-    String medDescription;
-    String medAvaliable;
+    String name;
+    String code;
+    String cost;
+    String shopname;
+    String description;
+    String avaliable;
 
 
     public MedicineData() {
@@ -17,36 +17,64 @@ public class MedicineData {
         // Empty Constructor needed
     }
 
-    public MedicineData(String medName, String medCode, String medCost, String medShopname, String medDescription, String medAvaliable) {
-        this.medName = medName;
-        this.medCode = medCode;
-        this.medCost = medCost;
-        this.medShopname = medShopname;
-        this.medDescription = medDescription;
-        this.medAvaliable = medAvaliable;
+    public MedicineData(String shopname) {
+        this.shopname = shopname;
     }
 
-    public String getMedName() {
-        return medName;
+    public MedicineData(String name, String code, String cost, String shopname, String description, String avaliable) {
+        this.name = name;
+        this.code = code;
+        this.cost = cost;
+        this.shopname = shopname;
+        this.description = description;
+        this.avaliable = avaliable;
     }
 
-    public String getMedCode() {
-        return medCode;
+    public String getName() {
+        return name;
     }
 
-    public String getMedCost() {
-        return medCost;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getMedShopname() {
-        return medShopname;
+    public String getCode() {
+        return code;
     }
 
-    public String getMedDescription() {
-        return medDescription;
+    public void setCode(String code) {
+        this.code = code;
     }
 
-    public String getMedAvaliable() {
-        return medAvaliable;
+    public String getCost() {
+        return cost;
+    }
+
+    public void setCost(String cost) {
+        this.cost = cost;
+    }
+
+    public String getShopname() {
+        return shopname;
+    }
+
+    public void setShopname(String shopname) {
+        this.shopname = shopname;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public String getAvaliable() {
+        return avaliable;
+    }
+
+    public void setAvaliable(String avaliable) {
+        this.avaliable = avaliable;
     }
 }

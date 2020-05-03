@@ -6,34 +6,43 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
-import com.firebase.ui.firestore.FirestoreRecyclerOptions;
+import java.util.List;
 
-public class MedicineDataAdapter extends FirestoreRecyclerAdapter<MedicineData, MedicineDataAdapter.MedicineDataHolder> {
+public class MedicineDataAdapter extends RecyclerView.Adapter<MedicineDataAdapter.MedicineDataHolder> {
 
-    public MedicineDataAdapter(@NonNull FirestoreRecyclerOptions<MedicineData> options) {
-        super(options);
+    MedicineDataActivity dashboard;
+    List<MedicineData> medicineData;
+
+    public MedicineDataAdapter(MedicineDataActivity dashboard, List<MedicineData> medicineData) {
+        this.dashboard = dashboard;
+        this.medicineData = medicineData;
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull MedicineDataHolder holder, int position, @NonNull MedicineData model) {
-
-        holder.medName.setText(model.getMedName());
-        holder.medCost.setText(model.getMedCost());
-        holder.medDescription.setText(model.getMedDescription());
+    public void onBindViewHolder(@NonNull MedicineDataHolder viewHolder, int i) {
+        viewHolder.medName.setText(medicineData.get(i).getName());
+        viewHolder.medCost.setText(medicineData.get(i).getCost());
+        viewHolder.medDescription.setText(medicineData.get(i).getDescription());
     }
 
     @NonNull
     @Override
-    public MedicineDataHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public MedicineDataHolder onCreateViewHolder(@NonNull ViewGroup viewGroup, int i) {
 
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_medicine_details_1,parent,false);
-        return new MedicineDataHolder(v);
+        View itemView = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.medicine, viewGroup, false);
+        return new MedicineDataHolder(itemView);
     }
 
-    class MedicineDataHolder extends RecyclerView.ViewHolder {
+
+    @Override
+    public int getItemCount() {
+        return medicineData.size();
+    }
+
+    public static class MedicineDataHolder extends RecyclerView.ViewHolder {
 
         TextView medName;
         TextView medCode;
@@ -41,14 +50,29 @@ public class MedicineDataAdapter extends FirestoreRecyclerAdapter<MedicineData, 
         TextView medShopname;
         TextView medDescription;
         TextView medAvaliable;
+        CardView cardView;
+        View view;
+        private Listener listener;
 
         public MedicineDataHolder(@NonNull View itemView) {
             super(itemView);
+
+
+//            cardView = itemView.findViewById(R.id.card1);
             medName = itemView.findViewById(R.id.medicineName);
             medCost = itemView.findViewById(R.id.medicineCost);
             medDescription = itemView.findViewById(R.id.medicineDescription);
 
+        }
 
+        public void setOnClickListener(Listener listener) {
+            this.listener = listener;
+        }
+
+        public interface Listener {
+            void onItemClick(View view, int position);
+
+            void onItemLongClick(View view, int position);
         }
     }
 
