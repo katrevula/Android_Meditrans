@@ -21,9 +21,9 @@ Our application can run in every Android mobile devices.
 1. Install Google play services SDK in Android studio.
 
 ### Test Credentials:
-UserID: Firstmedico@medico.com
+UserID: walmart@walmart.com
 
-Password: FirstMedico
+Password: 123123
 ### Apk file: 
 Attached file is at Meditrans/app-debug.apk
 ### Supported Devices:

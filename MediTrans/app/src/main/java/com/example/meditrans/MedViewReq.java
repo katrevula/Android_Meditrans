@@ -10,17 +10,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class MedViewReq extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -33,20 +29,21 @@ public class MedViewReq extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_med_view_req);
         recyclerView = findViewById(R.id.recyviewreq);
-//        getrequest();
+        getrequest();
     }
-//    public void getrequest() {
-//        AddReqClass jobsBean1 = new AddReqClass();
-//        jobsBean1.setBname("kavya");
-//        jobsBean1.setBmobile("6605349686");
-//        jobsBean1.setBaddress("maryville");
-//        jobsBean1.setBrequest("fever");
-//        data.add(jobsBean1);
-//        viewRequestAdapter =new  ViewRequestAdapter(data, getApplicationContext());
-//        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayout.VERTICAL, false);
-//        recyclerView.setLayoutManager(linearLayoutManager);
-//        recyclerView.setAdapter(viewRequestAdapter);
-//         }
+
+    public void getrequest() {
+        AddReqClass jobsBean1 = new AddReqClass();
+        jobsBean1.setBname("kavya");
+        jobsBean1.setBmobile("6605349686");
+        jobsBean1.setBaddress("maryville");
+        jobsBean1.setBrequest("fever");
+        data.add(jobsBean1);
+        viewRequestAdapter = new ViewRequestAdapter(data, getApplicationContext());
+        LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getApplicationContext(), LinearLayoutManager.VERTICAL, false);
+        recyclerView.setLayoutManager(linearLayoutManager);
+        recyclerView.setAdapter(viewRequestAdapter);
+    }
 //    private class ViewRequestAdapter extends RecyclerView.Adapter<MedViewReq.ViewRequestAdapter.MyViewHolder> {
 //        List<AddReqClass> data;
 //        Context applicationContext;
@@ -104,12 +101,14 @@ public class MedViewReq extends AppCompatActivity {
             this.applicationContext = applicationContext;
             this.data = data;
         }
+
         @NonNull
         @Override
         public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
             View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.viewrequest_layout, parent, false);
             return new MyViewHolder(view);
         }
+
         @Override
         public void onBindViewHolder(@NonNull final ViewRequestAdapter.MyViewHolder holder, final int position) {
             holder.sname.setText(data.get(position).getBname());
@@ -119,10 +118,12 @@ public class MedViewReq extends AppCompatActivity {
 
 
         }
+
         @Override
         public int getItemCount() {
             return data.size();
         }
+
         public class MyViewHolder extends RecyclerView.ViewHolder {
             TextView sname, smobile, addres, sdesript;
             ImageView scall;
@@ -143,6 +144,7 @@ public class MedViewReq extends AppCompatActivity {
         inflater.inflate(R.menu.menu_dots, menu);
         return true;
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
@@ -154,4 +156,4 @@ public class MedViewReq extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
-        }
+}
