@@ -25,6 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.VolleyLog;
 import com.android.volley.toolbox.StringRequest;
+import com.basgeekball.awesomevalidation.AwesomeValidation;
+import com.basgeekball.awesomevalidation.ValidationStyle;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
@@ -58,6 +60,8 @@ public class MedAdd extends AppCompatActivity {
     FirebaseFirestore firebaseFirestore;
     FirebaseAuth mFirebaseAuth;
 
+    private AwesomeValidation awesomeValidation;
+
 
     // Write a message to the database
     FirebaseDatabase database = FirebaseDatabase.getInstance();
@@ -86,7 +90,9 @@ public class MedAdd extends AppCompatActivity {
         rba = findViewById(R.id.rbuttonc);
         rbb = findViewById(R.id.rbuttond);
         b = findViewById(R.id.bj);
-
+        awesomeValidation = new AwesomeValidation(ValidationStyle.BASIC);
+        awesomeValidation.addValidation(this, R.id.shopName,
+                "^[A-Za-z\\s]{1,}[\\.]{0,1}[A-Za-z\\s]{0,}$", R.string.nameerror);
         b.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
