@@ -9,23 +9,38 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.FirebaseFirestore;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class AddRequestActivity extends AppCompatActivity {
     EditText tname, tmobile, taddress, trquest;
     Button tsubmit;
     String shopnam;
     TextView shop;
-
+    DatabaseReference databaseReference;
 
     public String shopnamesEmail;
+
+    String userid;
+    FirebaseFirestore firebaseFirestore;
+    FirebaseAuth mFirebaseAuth;
+
+
 
 
     @Override
@@ -48,23 +63,26 @@ public class AddRequestActivity extends AppCompatActivity {
         tsubmit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String snam = tname.getText().toString();
-                String smob = tmobile.getText().toString();
-                String sadd = taddress.getText().toString();
-                String sreq = trquest.getText().toString();
-                if (snam.equals("") && smob.equals("") && sadd.equals("") && sreq.equals("")) {
-                    tname.setError("Enter your name here");
-                    tmobile.setError("Enter your mobile number here");
-                    taddress.setError("Enter your address here");
-                    trquest.setError("Type your Request or Prescription");
-                } else {
-                    Toast.makeText(getApplicationContext(), "Submitted your request", Toast.LENGTH_SHORT).show();
-                    DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("requests");
+//                String snam = tname.getText().toString();
+//                String smob = tmobile.getText().toString();
+//                String sadd = taddress.getText().toString();
+//                String sreq = trquest.getText().toString();
+//                 String tshopNAME = shopnamesEmail;
+//                if (snam.equals("") && smob.equals("") && sadd.equals("") && sreq.equals("")) {
+//                    tname.setError("Enter your name here");
+//                    tmobile.setError("Enter your mobile number here");
+//                    taddress.setError("Enter your address here");
+//                    trquest.setError("Type your Request or Prescription");
+//                } else {
+////                    Toast.makeText(getApplicationContext(), "Submitted your request", Toast.LENGTH_SHORT).show();
+//                     databaseReference = FirebaseDatabase.getInstance().getReference().child("requests");
+//
+//                    RequestData reqdata = new RequestData(snam, smob, sadd, sreq, tshopNAME);
+//                    databaseReference.setValue(reqdata);
+//                    Toast.makeText(getApplicationContext(), "Request Submitted", Toast.LENGTH_SHORT).show();
+//                }
 
-                    RequestData reqdata = new RequestData(snam, smob, sadd, sreq, shopnamesEmail);
-                    databaseReference.setValue(reqdata);
-                    Toast.makeText(getApplicationContext(), "Request Submitted", Toast.LENGTH_SHORT).show();
-                }
+                getParamssss();
 
 
             }
@@ -107,5 +125,44 @@ public class AddRequestActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+    public void getParamssss() {
+        // Create a new user with a first and last name
+        //To Read data from Edit fields and convert to string
+        String snam = tname.getText().toString();
+        String smob = tmobile.getText().toString();
+        String sadd = taddress.getText().toString();
+        String sreq = trquest.getText().toString();
+        String tshopNAME = shopnamesEmail;
+
+
+        Map<String, String> data = new HashMap<String, String>();//to bind group of data
+
+        data.put("name", snam);
+        data.put("code", smob);
+        data.put("cost", sadd);
+        data.put("shopname", sreq);
+        data.put("description", tshopNAME);
+
+
+        FirebaseFirestore db = FirebaseFirestore.getInstance();
+// Add a new document with a generated ID
+        db.collection("Requests")
+                .add(data)
+                .addOnSuccessListener(new OnSuccessListener<DocumentReference>() {
+                    @Override
+                    public void onSuccess(DocumentReference documentReference) {
+                        Log.d("TAG", "Requests ID: " + documentReference.getId());
+                    }
+                })
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Log.w("TAG", "Error adding document", e);
+                    }
+                });
+    }
+
+
+
 
 }
