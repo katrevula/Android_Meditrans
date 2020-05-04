@@ -1,5 +1,7 @@
 package com.example.meditrans;
 
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +12,8 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
+
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
 
 public class MedicineDataAdapter extends RecyclerView.Adapter<MedicineDataAdapter.MedicineDataHolder> {
 
@@ -65,9 +69,6 @@ public class MedicineDataAdapter extends RecyclerView.Adapter<MedicineDataAdapte
 
         }
 
-        public void setOnClickListener(Listener listener) {
-            this.listener = listener;
-        }
 
         public interface Listener {
             void onItemClick(View view, int position);

@@ -2,6 +2,7 @@ package com.example.meditrans;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -21,6 +22,8 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.firebase.ui.auth.AuthUI.getApplicationContext;
+
 public class MedicineDataActivity extends AppCompatActivity {
 
     List<MedicineData> medicineDataList = new ArrayList<>();
@@ -31,13 +34,16 @@ public class MedicineDataActivity extends AppCompatActivity {
     MedicineDataAdapter medicineDataAdapter;
     public String shopnamesEmail;
 
-    Button addrequest ;
+    Button addrequest;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_medicine_details_1);
+
+
+        addrequest=findViewById(R.id.addrequest);
 
         firebaseFireStore = FirebaseFirestore.getInstance();
         recyclerView = findViewById(R.id.medicineDataRecycler);
@@ -50,14 +56,17 @@ public class MedicineDataActivity extends AppCompatActivity {
         shopnamesEmail = intent.getStringExtra("shopnamesEmail");
 
         retrieveData();
+        addrequest.setOnClickListener(new View.OnClickListener() {
 
-//        addrequest.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), MedReg.class);
-//                startActivity(intent);
-//            }
-//        });
+
+            @Override
+            public void onClick(View v) {
+                Log.d("TAG", "Add rerquest acctivity calling " );
+                Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 
@@ -82,6 +91,8 @@ public class MedicineDataActivity extends AppCompatActivity {
                 medicineDataAdapter = new MedicineDataAdapter(MedicineDataActivity.this, shopnamesEmailList);
                 recyclerView.setAdapter(medicineDataAdapter);
 
+
+
             }
         }).addOnFailureListener(new OnFailureListener() {
             @Override
@@ -91,23 +102,26 @@ public class MedicineDataActivity extends AppCompatActivity {
 
             }
         });
-    }
 
-    public void addRequest() {
-
-        addrequest.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
-                intent.putExtra("shopnamesEmail", shopnamesEmail);
-                startActivity(intent);
-
-            }
-        });
 
 
     }
+
+//    public void addRequest() {
+//
+//        addrequest.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//
+//                Intent intent = new Intent(getApplicationContext(), AddRequestActivity.class);
+//                intent.putExtra("shopnamesEmail", shopnamesEmail);
+//                startActivity(intent);
+//
+//            }
+//        });
+//
+//
+//    }
 
 
 }
